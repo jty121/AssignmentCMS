@@ -1,0 +1,53 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = null;
+
+    var contactInfoImg = Model?.Value<IPublishedContent>("contactInformationImage")?.Url() ?? "";
+    var bgDottedImg = Model?.Value<IPublishedContent>("contactInformationDottedbg")?.Url() ?? "";
+    var colorBgImg = Model?.Value<IPublishedContent>("contactInformationColorbg")?.Url() ?? "";
+    
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "siteSettings") ?? null;
+    var officeLocation = settings?.Value<string>("officeLocation") ?? "";
+    var officePhone = settings?.Value<string>("officePhone") ?? "";
+    var officeEmail = settings?.Value<string>("officeEmailAddress") ?? "";
+
+    var removeBackground = Model.ContentType.Alias == "contactPage";
+}
+
+<div class="contact-information" style="@(removeBackground ? "background-color: #FFFFFF;" : "background-color: #F7F7F7;")">
+    <div class="container">
+        <div class="backgrounds">
+            <img class="dots" src="@bgDottedImg" alt="dotted background">
+            <img class="bg-asymetric" src="@colorBgImg" alt="colored background">
+        </div>
+            <img class="bg-img" src="@contactInfoImg" alt="">
+        <div class="content">
+                <h2>@Model.Value("contactInformationHeadline")</h2>
+            <div class="info">
+                <i class="fa-light fa-location-dot"></i>
+                <div>
+                    <h6>Office location</h6>
+                    <p>@officeLocation</p>
+                </div>
+            </div>
+            <div class="info">
+                <i class="fa-regular fa-phone-flip"></i>
+                <div>
+                    <h6>Phone number</h6>
+                    <p>@officePhone</p>
+                </div>
+            </div>
+            <div class="info">
+                <i class="fa-light fa-envelope"></i><i></i>
+                <div>
+                    <h6>E-mail address</h6>
+                    <p>@officeEmail</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+
+@{ 
+    var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray(); 
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "siteSettings") ?? null;
+    var officeLocation = settings?.Value<string>("officeLocation") ?? "";
+
+    var logotypeImage = Model?.Value<IPublishedContent>("pageLogotype")?.Url() ?? "";
+}
+
+
+<header>
+    <div class="header-info bg-primary">
+        <div class="container">
+            <div class="contact-info">
+                <p>@officeLocation</p> 
+            </div>
+            <div class="social-media">
+                <div class="link">
+                    <a href="/www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+                <div class="link">
+                    <a href="/www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <div class="link">
+                    <a href="/www.linkedin.com"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-menu">
+        <div class="container">
+            <div class="menu">
+                <div class="options">
+                    <a href="/" class="logo"><img src="@logotypeImage" alt="Onatrix Logotype"></a>
+                    @if (selection?.Length > 0)
+                    {
+                        @foreach (var item in selection)
+                        {
+                            <a href="@item.Url(PublishedUrlProvider)" class="@(item.IsAncestorOrSelf(Model) ? "current" : null)" title="@item.Name">@item.Name</a>
+                        }
+                    }
+                </div>
+                <div class="search">
+                    <i class="fa-regular fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </div>
+    </div> 
+</header>

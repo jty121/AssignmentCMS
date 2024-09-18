@@ -1,0 +1,85 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Title)) {
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
+
+<div class="project-detail">
+    <div class="container">  
+        <aside class="detail-info">
+            <div class="top-section">
+                @Model.Value("pageContent")
+                <div class="choosed-tags">
+                    <h5>Tags:</h5>
+                    <span>Business</span>
+                    <span>Consulting</span>
+                    <span>Onatrix</span>
+                </div>
+            </div>   
+		</aside>
+		<div class="recent-projects">
+            <h5>Recent Projects</h5>
+                <div class="content">
+                    <div class="project">
+                        <div class="bg-color"></div>
+                        <div>
+                            <h6>Annual Report for Juva Inc.</h6>
+                            <i class="fa-duotone fa-solid fa-calendar-days"></i><span>June 15, 2024</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="bg-color"></div>
+                        <div>
+                            <h6>Business Insights for SP Group Inc.</h6>
+                            <i class="fa-duotone fa-solid fa-calendar-days"></i><span>May 17, 2024</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="bg-color"></div>
+                        <div>
+                            <h6>Financial Advisors to Irra Group Inc.</h6>
+                            <i class="fa-duotone fa-solid fa-calendar-days"></i><span>February 6, 2024</span>
+                        </div>
+                    </div>
+                    <div class="project-last">
+                        <div class="bg-color"></div>
+                        <div>
+                            <h6>Budget Planning for Buccura Inc.</h6>
+                            <i class="fa-duotone fa-solid fa-calendar-days"></i><span>January 3, 2024</span>
+                        </div> 
+                    </div>
+                </div>
+            <div class="tags">
+                <h4>Tags</h4>
+                <div class="tag-btns">
+                    <button class="btn-tags">Report</button>
+                    <button class="btn-tags">Busines plans</button>
+                    <button class="btn-tags">Insights</button>
+                    <button class="btn-tags">Business</button>
+                    <button class="btn-tags">App</button>
+                    <button class="btn-tags">Project</button>
+                    <button class="btn-tags">Finance</button>
+                    <button class="btn-tags">Pricing</button>
+                </div>
+                <form method="post">
+                    <h4>How can we help you?</h4>
+                    <p>online support 24/7, we are here to help you</p>
+    
+                    <div id="form-email" class="input-group">
+                        <label for="email"></label>
+                        <input type="text" name="email" placeholder="E-mail address">
+                        <i class="fa-light fa-envelope"></i>
+                    </div>
+                </form>
+            </div>
+        </div> 
+	</div>            
+</div>
+
+@await Html.PartialAsync("static/contactInformation")

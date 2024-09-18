@@ -1,0 +1,114 @@
+@import "../../mixins/_mixins-media.scss";
+
+.about-us {
+
+    .container {
+        display: grid;
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @include desktop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+
+        .info {
+            padding-top: 3rem;
+            padding-bottom: 5rem;
+            text-align: center;
+
+            @include desktop {
+                padding-top: 6rem;
+                padding-bottom: 5rem;
+                text-align: start;
+            }
+
+            p {
+                font-size: 14px;
+                margin-top: 1rem;
+            }
+
+            img {
+                margin-top: 1.5rem;
+            }
+
+            blockquote {
+                font-style: italic;
+                font-size: 20px;
+                font-weight: 300;
+                margin-top: 2.5rem;
+            }
+        }
+
+        .submit-form {
+            box-shadow: 3px 3px 15px 3px rgba(85, 85, 85, 0.1);
+            position: relative;
+            width: 100%;
+            z-index: 1;
+
+            @include tablet {
+                position: relative;
+                top: -80px;
+                left: 30px;
+                width: 90%;
+                z-index: 1;
+            }
+
+            @include desktop {
+                position: relative;
+                top: -80px;
+                left: 30px;
+                width: 90%;
+                z-index: 1;
+            }
+
+            h3 {
+                background-color: var(--color-primary);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1em;
+
+                @include desktop {
+                    background-color: var(--color-primary);
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    padding: 1em;
+                }
+            }
+
+            form {
+                padding: 2rem;
+                gap: 1.5rem;
+                width: 100%;
+                display: grid;
+
+                input {
+                    font-size: 13px;
+                    font-style: italic;
+
+                    &::placeholder {
+                        color: #9C9EA6;
+                    }
+                }
+
+                select {
+                    font-size: 13px;
+                    color: var(--color-primary);
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 13px;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}

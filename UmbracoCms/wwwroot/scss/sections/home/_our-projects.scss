@@ -1,0 +1,103 @@
+@import "../../mixins/_mixins-media.scss";
+
+.our-projects {
+    padding-bottom: 3rem;
+
+    .container {
+        padding-top: 3rem;
+
+        @include tablet {
+            padding-top: 6rem;
+        }
+
+        span {
+            display: grid;
+            justify-content: center;
+
+            @include desktop {
+                display: grid;
+                justify-content: start;
+            }
+        }
+
+        h2 {
+            margin-bottom: 2rem;
+            text-align: center;
+
+            @include desktop {
+                text-align: start;
+            }
+        }
+    }
+
+    .recent-projects {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include desktop {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        a {
+            position: relative;
+            overflow: hidden; //döljer allt som går utanför länken
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            .content {
+                padding: 1rem;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background-color: rgba(79, 89, 85, 0.4); // använd rgba istället för opacity. opacity påverkar alla child objekt
+                transition: background-color 0.3s;
+
+                h5 {
+                    color: #ffffff;
+                    font-weight: 400;
+                }
+
+                p {
+                    color: #ffffff;
+                }
+
+                &::after {
+                    content: '\f105';
+                    font-family: 'Font Awesome 6 Pro';
+                    font-size: 40px;
+                    color: #ffffff;
+                    position: absolute;
+                    right: 40px;
+                    bottom: 40px;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+            }
+
+            &:hover {
+                h5 {
+                    color: var(--color-secondary);
+                    font-weight: 700;
+                }
+
+                .content {
+                    padding: 2rem;
+                    background-color: var(--color-primary);
+                }
+
+                .content::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

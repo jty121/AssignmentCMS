@@ -1,0 +1,144 @@
+.services-details{
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        
+        .support {
+            .content{  
+                width: 70%;
+                h5{
+                    margin-bottom: 1.5rem;
+                }
+
+                p{
+                    margin-top: 1.5rem;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        form{
+            position: relative;
+            background-color: var(--color-primary);
+            border-radius: 4px;
+            padding: 2rem;
+            width: 85%;
+
+            h4{
+                color: var(--color-accent);
+                font-weight: 600;
+            }
+
+            p{
+                color: #ffffff;
+            }
+
+            i{
+                position: absolute;
+                right: 15%;
+                bottom: 22%;
+                font-size: 22px;
+                color: var(--color-primary);
+            }
+
+            input{
+                color: #9C9EA6;
+                font-size: 13px;
+            }
+
+        }
+
+        .key-point{
+            border-left: 2px solid #ECECEC;
+            
+            .key-info {
+                padding-left: 4rem;
+                font-size: 14px;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+
+                h4{
+                    font-size: 25px;
+                    font-weight: 700;
+                    margin-top: 2rem;
+                }
+
+                ul { 
+                    padding-left: 1.2rem;
+                }
+                li {
+                    list-style: none;
+                    position: relative;
+                    margin-bottom: 1rem;
+                }
+
+                li::before {
+                    content: "•"; // håll nere alt + 0149
+                    color: var(--color-secondary);
+                    position: absolute;
+                    left: -20px;
+                }
+
+                
+            }
+
+            .financial-plan {
+                padding-left: 4rem;
+                font-size: 14px;          
+                h4{
+                    font-size: 25px;
+                    font-weight: 700;
+                    margin-top: 2rem;
+                }
+                ul { 
+                    padding-left: 1.2rem;
+                }
+                li {
+                    list-style: none;
+                    position: relative;
+                    margin-bottom: 1rem;
+                }
+
+                li::before {
+                    content: "•"; // håll nere alt + 0149
+                    color: var(--color-secondary);
+                    position: absolute;
+                    left: -20px;
+                }
+                img{
+                    margin-top: 1rem;
+                }
+            }
+
+            .financial-confidence{
+                padding-left: 4rem;
+                font-size: 14px;
+                h4{
+                    font-size: 25px;
+                    font-weight: 700;
+                    margin-top: 2rem;
+                }
+                ul { 
+                    padding-left: 1.2rem;
+                }
+                li {
+                    list-style: none;
+                    position: relative;
+                    margin-bottom: 1rem;
+                }
+
+                li::before {
+                    content: "•"; // håll nere alt + 0149
+                    color: var(--color-secondary);
+                    position: absolute;
+                    left: -20px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.request{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 6rem;
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+
+    .container{
+        position: absolute;
+        width: 70%;
+        top: 30%;
+
+        .request-form{
+            text-align: center;
+            background-color: var(--color-light);
+            box-shadow: 3px 3px 15px 3px rgba(85, 85, 85, 0.1);
+
+            .headlines{
+                padding-top: 4rem;
+                width: 50%;
+                margin: 0 auto;  //centrerar div horisontellt
+                
+                p{
+                    font-size: 13px;
+                    font-style: italic;
+                }
+            }
+
+            form {
+                padding: 0 3rem 1rem 3rem;
+                gap: 1.5rem;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                
+                input {
+                    font-size: 13px;
+                    font-style: italic;
+
+                    &::placeholder {
+                        color: #9C9EA6;
+                    }
+                }
+
+                select {
+                    font-size: 13px;
+                    color: var(--color-primary);
+                    font-weight: 600;
+                }
+            }
+            .btn-primary{
+                display: inline-block;
+                justify-self: center;
+                margin-bottom: 3rem;    
+            }
+        
+        }
+    }
+}

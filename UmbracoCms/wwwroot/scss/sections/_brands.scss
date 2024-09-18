@@ -1,0 +1,18 @@
+.brands {
+    .container{
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+
+        .company-brands {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+
+            img {
+                width: 10%;
+                height: auto;
+            }
+        }
+    }
+}

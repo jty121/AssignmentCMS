@@ -1,0 +1,81 @@
+.services-provided {
+    .container {
+        padding-top: 5rem;
+        padding-bottom: 4rem;
+
+        .headline-services {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            h2 {
+                margin-top: 1rem;
+            }
+        }
+
+        .boxes-services {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+
+            .card{
+                background-color: #ffffff;
+                border-radius: 3px;
+                border: 2px solid var(--color-gray);                
+                a {
+                    &:hover {
+                        color: var(--color-primary);
+                        box-shadow: 0px 0px 30px 0px rgba(85, 85, 85, 0.1);
+                        transition: ease-in-out 0.3s;
+                    }
+                }
+
+                h4 {
+                    font-weight: 500;
+                    padding: 2rem;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                p {
+                    padding: 2rem;
+                }
+            }
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            gap:1rem;
+            margin-top: 3rem;
+
+            .previous-page {
+                color: #EAEAEA;
+                font-weight: 600;
+            }
+            em{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-weight: 600;
+                font-style: normal; //tar bort kursiv stil som sätts normalt på em
+                border: 1px solid #EAEAEA;
+                border-radius: 50%;
+                height: 50px;
+                width: 50px;
+            }
+
+            a{
+                font-weight: 600;
+            }
+        }
+    }
+}

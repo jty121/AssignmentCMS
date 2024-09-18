@@ -1,0 +1,21 @@
+.footer {
+    background-color: #0E0E0E;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    .container {
+
+        .copyrights {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            text-align: center;
+
+            p {
+                margin-left: 4px;
+                padding: 0;
+                color: var(--color-secondary);
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.projects-menu {
+    position: relative;
+    background-color: var(--color-gray);
+    overflow: hidden;
+
+    .img {
+        width: 100%;
+        height: auto;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+       
+        
+        .nav {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -80%);
+            max-width: 1320px;
+            
+            h1 {
+                margin: 0;
+            }
+            a {   
+                p{
+                    &:hover {
+                        color: var(--color-primary);
+                        font-weight: 600;
+                    }
+                }
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+
+            i {
+                font-size: 12px;
+                margin: 5px;
+            }
+        }
+    }
+
+    
+}

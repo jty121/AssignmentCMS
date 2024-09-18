@@ -1,0 +1,47 @@
+@import "./mixins/mixins";  
+@import "./misc/base"; 
+
+@import "./components/wrapper";
+@import "./components/containers";
+@import "./components/links";
+@import "./components/buttons";
+@import "./components/typography";
+@import "./components/forms";
+
+@import "./sections/header";
+
+//home
+@import "./sections/home/showcase";
+@import "./sections/home/about-us";
+@import "./sections/home/our-services";
+@import "./sections/home/trusted-by";
+@import "./sections/home/stories";
+@import "./sections/home/our-projects";
+
+@import "./sections/brands";
+@import "./sections/footer";
+
+//about
+@import "./sections/about/ceo-founder";
+@import "./sections/about/review";
+@import "./sections/about/our-experts";
+
+@import "./sections/contact-information";
+
+//services
+@import "./sections/services/services-section";
+@import "./sections/services/services-provided";
+@import "./sections/services/services-details";
+@import "./sections/services/services-details-form";
+
+//project
+@import "./sections/projects/projects-section";
+@import "./sections/projects/projects";
+
+//project-details
+@import "./sections/projects/projects-details";
+
+//contact
+@import "./sections/contact/contact";
+
+@import "./sections/breadcrumb";

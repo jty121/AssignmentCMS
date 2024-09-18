@@ -1,0 +1,14 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+}
+
+
+//istället för att behöva skriva den här delen på andra ställen. så gör en mall här och includera det i övrig kod där det behövs. 

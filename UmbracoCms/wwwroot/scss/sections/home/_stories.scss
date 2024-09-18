@@ -1,0 +1,70 @@
+@import "../../mixins/_mixins-media.scss";
+
+.stories {
+    .container {
+        padding-top: 5rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 1;
+
+        span {
+            font-size: 14px;
+        }
+
+        h2 {
+            margin-bottom: 2rem;
+        }
+
+        .dotted-map {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 44%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .success-story {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+
+            span {
+                font-size: 60px;
+
+                @include tablet {
+                    font-size: 90px;
+                }
+
+                @include desktop {
+                    font-size: 100px;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+
+        .video {
+            margin-top: 1rem;
+            max-width: 100%;
+            height: auto;
+
+            @include tablet {
+                margin-top: 2rem;
+                max-width: 100%;
+                height: auto;
+            }
+
+            @include desktop {
+                margin-top: 4rem;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

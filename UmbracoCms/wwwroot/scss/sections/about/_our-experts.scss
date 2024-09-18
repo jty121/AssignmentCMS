@@ -1,0 +1,145 @@
+@import "../../mixins/_mixins-media.scss";
+
+.our-experts {
+    padding-top: 4rem;
+    padding-bottom: 0;
+
+    @include tablet {
+        padding-top: 6rem;
+        padding-bottom: 5rem;
+    }
+
+    .container {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+
+        .headline {
+            text-align: center;
+
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+
+        .members {
+
+            .card-top {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-top: 3rem;
+
+                @include tablet {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 2rem;
+                    margin-top: 3rem;
+                }
+
+                @include desktop {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 2rem;
+                    margin-top: 3rem;
+                }
+
+
+                .card {
+                    border: 2px solid var(--color-gray);
+                    border-radius: 4px;
+
+                    a {
+                        img {
+                            width: 390px;
+                            height: auto;
+
+                            @include tablet {
+                                width: 100%;
+                                height: auto;
+                            }
+
+                            @include desktop {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+
+                        h4 {
+                            padding: 1rem 1rem 0;
+                        }
+
+                        p {
+                            color: #9C9EA6;
+                            padding-left: 1rem;
+                        }
+
+                        &:hover {
+                            color: var(--color-primary);
+                            box-shadow: 0px 0px 30px 0px rgba(85, 85, 85, 0.1);
+                            transition: ease-in-out 0.3s;
+                        }
+                    }
+                }
+            }
+
+            .card-bottom {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-top: 3rem;
+
+                @include tablet {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    gap: 2rem;
+                    margin-top: 3rem;
+                }
+
+                @include desktop {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    gap: 2rem;
+                    margin-top: 3rem;
+                }
+
+                .card {
+                    border: 2px solid var(--color-gray);
+                    border-radius: 4px;
+
+                    a {
+                        img {
+                            width: 390px;
+                            height: auto;
+
+                            @include tablet {
+                                width: 100%;
+                                height: auto;
+                            }
+
+                            @include desktop {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+
+                        h4 {
+                            padding: 1rem 1rem 0;
+                        }
+
+                        p {
+                            color: #9C9EA6;
+                            padding-left: 1rem;
+                        }
+
+                        &:hover {
+                            color: var(--color-primary);
+                            box-shadow: 0px 0px 30px 0px rgba(85, 85, 85, 0.1);
+                            transition: ease-in-out 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

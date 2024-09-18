@@ -1,0 +1,53 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var locationImg = Model?.Value<IPublishedContent>("requestLocationBackgroundImg")?.Url() ?? "";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Title)) {
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
+@await Html.PartialAsync("static/contactInformation")
+
+<div class="request">
+    <img src="@locationImg" alt="Google Maps">
+    <div class="container">
+        <div class="request-form">
+            <div class="headlines">
+                <h6>@Model?.Value("requestSectionTitle")</h6>
+                <h2>@Model?.Value("requestSectionHeadline")</h2>
+                <p>@Model?.Value("requestText")</p>
+            </div>
+            <form method="post">
+                <div id="form-name" class="input-group">
+                    <label for="name"></label>
+                    <input type="text" name="name" placeholder="Name">
+                </div>
+                <div id="form-phone" class="input-group">
+                    <label for="phone"></label>
+                    <input type="text" name="phone" placeholder="Phone">
+                </div>
+                <div id="form-email" class="input-group">
+                    <label for="email"></label>
+                    <input type="text" name="email" placeholder="Email address">
+                </div>
+                <div id="form-dropdown" class="input-group">
+                    <label for="dropdown-menu"></label>
+                        <select id="dropdown-form-menu" name="dropdown-menu">
+                            <option value="option1">Financial consulting</option>
+                            <option value="option2">Financial consulting</option>
+                            <option value="option3">Financial consulting</option>
+                        </select>
+                </div>
+            </form>   
+            <a href="@Model?.Value("requestButtonUrl")" class="btn-primary" type="submit">@Model?.Value("requestButtonText")</a>
+        </div>
+    </div>
+</div>
+
+ @await Html.PartialAsync("partials/static/brands.cshtml")

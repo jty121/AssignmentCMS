@@ -1,0 +1,54 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+	
+}
+@{
+	var selection = Umbraco.Content(Guid.Parse("e40f20a4-b2de-46f0-8e59-4772e4098e8c"))?
+    .ChildrenOfType("serviceItemTemplate")
+    ?.Where(x => x.IsVisible());
+}
+@if (!string.IsNullOrEmpty(ViewBag.Title)) {
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
+<div class="services-provided">
+    <div class="container">
+        <div class="headline-services">
+            <h2>@Model?.Value("customHeadline")</h2>
+        </div>
+        <div class="boxes-services">
+
+            @if (selection != null && selection.Any())
+            {
+                @foreach (var item in selection)
+                {
+                    var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+                    var thumbnailText = item?.Value<string>("thumbnailText") ?? "";
+
+                    <div class="card">
+                        <a href="@item?.Url()">
+                            <h4>@item?.Name()</h4>
+                            <img src="@image" alt="@item?.Name()">
+                            <p>@thumbnailText</p>
+                        </a>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No items found</p>
+            }
+			
+        </div>                              
+		<nav class="pagination">
+			<span class="previous-page" aria-disabled="true">Prev</span>
+				<em aria-current="page"> 1</em>
+				<a href="#">2</a>
+				<a class="next-page" href="#" aria-label="Next">Next</a>
+		</nav>
+    </div>
+</div>
+@await Html.PartialAsync("static/contactInformation")

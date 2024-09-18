@@ -1,0 +1,17 @@
+.btn-dark, .btn-primary, .btn-secondary, .btn-accent, .btn-gray, .btn-light, .btn-tags {
+    @include btn;
+}
+
+.btn-menu {
+    @include btn-circle;
+    height: 50px;
+    width: 50px;
+    font-size: 1.6rem;
+}
+
+.btn-tags{
+    border-radius: 30px;
+    padding: 16px 20px;
+    font-weight: 400;
+    border: 2px solid;
+}

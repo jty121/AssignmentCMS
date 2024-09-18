@@ -1,0 +1,160 @@
+.projects{
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+
+        .project-list{
+            border-right: 2px solid #ECECEC;
+            .content{
+                display: grid;
+                .read-more{
+                    display: flex;
+                    width: 90%;
+                    padding: 2rem 0;
+                    border-bottom: 2px solid #ECECEC;
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .info{
+                        display: grid;
+                        justify-content: space-between;
+                        margin-left: 2rem;
+                        width: 80%;
+                        i{
+                            color: #9C9EA6;
+                            margin-right: 8px;
+                        }
+                        span{
+                            color: #9C9EA6;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+
+                        a{
+                            font-weight: 600;
+                            margin-top: 3rem;
+                            i{
+                                margin-left: 8px;
+                            }
+                        }
+                    }
+                }
+
+                .read-more-last{
+                    display: flex;
+                    width: 90%;
+                    padding: 2rem 0;
+                        
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+    
+                        .info{
+                            display: grid;
+                            justify-content: space-between;
+                            margin-left: 2rem;
+                            width: 80%;
+                            
+                        i{
+                            color: #9C9EA6;
+                            margin-right: 8px;
+                        }
+                        span{
+                            color: #9C9EA6;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+
+                        a{
+                            font-weight: 600;
+                            margin-top: 3rem;
+                            i{
+                                margin-left: 8px;
+                            }
+                        }
+                    }
+                }
+
+                .pagination {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 18px;
+                    gap:1rem;
+                    margin-top: 3rem;
+        
+                    .previous-page {
+                        color: #EAEAEA;
+                        font-weight: 600;
+                    }
+                    em{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        font-weight: 600;
+                        font-style: normal;
+                        border: 1px solid #EAEAEA;
+                        border-radius: 50%;
+                        height: 50px;
+                        width: 50px;
+                    }
+        
+                    a{
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        .tags {
+            padding-left: 4rem;
+            padding-top: 2rem;
+               
+            .tag-btns{
+                .btn-tags{
+                    margin: 10px 8px 10px 0;
+                }
+            }
+
+            form{
+                position: relative;
+                background-color: var(--color-primary);
+                border-radius: 4px;
+                padding: 2rem;
+                margin-top: 3rem;
+                width: 95%;
+    
+                h4{
+                    color: var(--color-accent);
+                    font-weight: 600;
+                }
+    
+                p{
+                    width: 85%;
+                    color: #ffffff;
+                }
+    
+                i{
+                    position: absolute;
+                    right: 15%;
+                    bottom: 22%;
+                    font-size: 22px;
+                    color: var(--color-primary);
+                }
+    
+                input{
+                    color: #9C9EA6;
+                    font-size: 13px;
+                }
+    
+            }
+        }
+    }
+}

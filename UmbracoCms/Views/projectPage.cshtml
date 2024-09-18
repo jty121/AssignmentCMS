@@ -1,0 +1,62 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Title)) {
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
+@{
+	var selection = Umbraco.Content(Guid.Parse("30280b1a-e2fd-40fc-95e7-92dc47935fbd"))?
+    .ChildrenOfType("projectItemTemplate")
+    ?.Where(x => x.IsVisible());
+}
+
+<div class="projects">
+    <div class="container">
+        <aside class="project-list">
+            <div class="content">
+
+                @if (selection != null && selection.Any())
+                {
+                    @foreach (var item in selection)
+                    {
+                        var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+                        var thumbnailText = item?.Value<string>("thumbnailText") ?? "";
+                        var thumbnailDate = item?.Value<string>("thumbnailDate") ?? "";
+
+                        <div class="read-more">
+                            <div>
+                                <img src="@image" alt="@item?.Name()">
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <h4>@item?.Name()</h4>
+                                    <i class="fa-duotone fa-solid fa-calendar-days"></i><span>@thumbnailDate</span>
+                                </div>
+                                <p>@thumbnailText</p>
+                                <a href="@item?.Url()">Read more<i class="fa-regular fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No items found.</p>
+                }
+
+                 <nav class="pagination">
+                    <span class="previous-page" aria-disabled="true">Prev</span>
+                    <em aria-current="page"> 1</em>
+                        <a href="#">2</a>
+                    <a class="next-page" href="#" aria-label="Next">Next</a>
+                </nav>
+            </div>      
+        </aside>
+    </div>
+</div>
+@await Html.PartialAsync("static/contactInformation")
+

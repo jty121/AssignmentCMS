@@ -1,0 +1,35 @@
+.services-details-form{
+    padding-bottom: 4rem;
+
+    h4{
+       font-size: 25px; 
+    }
+
+    form{
+        display: grid;
+        grid-template-areas: 
+            "name email"
+            "message message";
+        gap: 1.5rem;
+       
+        #form-name {
+            grid-area: name;
+        }
+        #form-email{
+            grid-area: email;
+        }
+        #form-message{
+            grid-area: message;
+        } 
+        .btn-primary{
+            justify-self: start; //justera knappen i en grid för att återgå till standardstorlek
+        }                   
+       
+        .input-group{
+            
+            ::placeholder {
+                color: #AAAAAA;
+            }
+        }
+    }
+}

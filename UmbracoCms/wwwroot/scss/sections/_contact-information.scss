@@ -1,0 +1,123 @@
+@import "../mixins/_mixins-media.scss";
+
+.contact-information {
+    padding-top: 2rem;
+
+    @include desktop {
+        padding-top: 5rem;
+        background-color: var(--color-gray);
+    }
+
+    .container {
+        display: grid;
+
+        @include desktop {
+            display: flex;
+        }
+
+        .backgrounds {
+            position: relative;
+
+            .dots {
+                display: none;
+
+                @include desktop {
+                    display: inline-block;
+                    position: absolute;
+                    bottom: 0;
+                    right: -10%;
+                }
+            }
+
+            .bg-asymetric {
+                display: none;
+
+                @include desktop {
+                    display: inline-block;
+                    position: relative;
+                    bottom: -36.5%;
+                    left: 20%;
+                }
+            }
+        }
+
+        .bg-img {
+            display: none;
+
+            @include tablet {
+                display: inline-block;
+                position: absolute;
+                right: -10%;
+                max-width: 100%;
+                height: auto;
+                object-fit: scale-down;
+                transform: scaleX(-1); // flippar bilden horisontellt. = spegelvänder
+                z-index: 0;
+            }
+
+            @include desktop {
+                display: inline-block;
+                position: absolute;
+                bottom: 0;
+                left: 10%;
+                width: auto;
+                height: auto;
+                transform: scaleX(1);
+            }
+        }
+
+        .content {
+            padding: 2rem;
+
+            @include tablet {
+                position: absolute;
+                z-index: 1;
+            }
+
+            @include desktop {
+                position: relative;
+                padding: 3rem 5rem;
+            }
+
+            h2 {
+                margin: 2rem;
+
+                @include tablet {
+                    width: 50%;
+                }
+
+                @include desktop {
+                    width: 100%;
+                    margin: 3rem;
+                }
+            }
+
+            .info {
+                display: flex;
+                margin: 2rem;
+
+                @include tablet {
+                    display: flex;
+                    justify-content: start;
+                    margin: 1rem;
+                }
+
+                @include desktop {
+                    display: flex;
+                    justify-content: start;
+                    margin: 3rem;
+                }
+
+                i {
+                    color: var(--color-secondary);
+                    font-size: 20px;
+                    margin-right: 16px;
+                }
+
+                h6 {
+                    color: var(--color-primary)
+                }
+            }
+        }
+    }
+}

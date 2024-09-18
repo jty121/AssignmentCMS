@@ -1,0 +1,27 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = null;
+
+    var brandImg1 = Model?.Value<IPublishedContent>("brandsSectionImg1")?.Url() ?? "";
+    var brandImg2 = Model?.Value<IPublishedContent>("brandsSectionImg2")?.Url() ?? "";
+    var brandImg3 = Model?.Value<IPublishedContent>("brandsSectionImg3")?.Url() ?? "";
+    var brandImg4 = Model?.Value<IPublishedContent>("brandsSectionImg4")?.Url() ?? "";
+    var brandImg5 = Model?.Value<IPublishedContent>("brandsSectionImg5")?.Url() ?? "";
+    var brandImg6 = Model?.Value<IPublishedContent>("brandsSectionImg6")?.Url() ?? "";
+}
+
+<section class="brands">
+    <div class="container">
+        <div class="company-brands">
+            <img src="@brandImg1" alt="@Model.Value("brandsSectionImg1Text")">
+            <img src="@brandImg2" alt="@Model.Value("brandsSectionImg2Text")">
+            <img src="@brandImg3" alt="@Model.Value("brandsSectionImg3Text")">
+            <img src="@brandImg4" alt="@Model.Value("brandsSectionImg4Text")">
+            <img src="@brandImg5" alt="@Model.Value("brandsSectionImg5Text")">
+            <img src="@brandImg6" alt="@Model.Value("brandsSectionImg6Text")">
+        </div>
+    </div>
+</section>

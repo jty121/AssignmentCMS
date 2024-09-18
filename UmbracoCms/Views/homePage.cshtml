@@ -1,0 +1,182 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var showcaseImage = Model?.Value<IPublishedContent>("showcaseBackgroundImg")?.Url() ?? "";
+    var signatureImage = Model?.Value<IPublishedContent>("aboutUsSignatureImg")?.Url() ?? "";
+
+    var trustedBybgImg = Model?.Value<IPublishedContent>("trustedByBackgroundImg")?.Url() ?? "";
+    var trustedByImg = Model?.Value<IPublishedContent>("trustedBySectionImg")?.Url() ?? "";
+
+    var storiesMapImg = Model?.Value<IPublishedContent>("storiesBackgroundImg")?.Url() ?? "";
+    var storiesImg = Model?.Value<IPublishedContent>("storiesSelectedPhotoImg")?.Url() ?? "";
+
+    var ourProjectsLink1 = Model?.Value<IPublishedContent>("ourProjectsItemImg1")?.Url() ?? "";
+    var ourProjectsLink2 = Model?.Value<IPublishedContent>("ourProjectsItemImg2")?.Url() ?? "";
+    var ourProjectsLink3 = Model?.Value<IPublishedContent>("ourProjectsItemImg3")?.Url() ?? "";
+    var ourProjectsLink4 = Model?.Value<IPublishedContent>("ourProjectsItemImg4")?.Url() ?? "";
+}
+@{
+	var selection = Umbraco.Content(Guid.Parse("e40f20a4-b2de-46f0-8e59-4772e4098e8c"))?
+    .ChildrenOfType("serviceItemTemplate")
+    ?.Where(x => x.IsVisible());
+}
+
+<section class="showcase">
+    <div class="container">
+        <img src="@showcaseImage" alt="@Model?.Value("showcaseImgAltText")">
+        <div class="content">
+            <h1>@Model?.Value("showcaseHeadline")</h1>
+            <p>@Model?.Value("showcaseText")</p>
+            <div>
+                <a href="@Model?.Value("showcaseButtonUrl")" class="btn-primary">@Model?.Value("showcaseButtonText")</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-us">
+    <div class="container">
+        <div class="info">
+            <span>@Model?.Value("aboutUsSectionTitle")</span>
+            <h2>@Model?.Value("aboutUsHeadline")</h2>
+            <blockquote>@Model?.Value("aboutUsQuote")</blockquote>
+            <p>@Model?.Value("aboutUsText")</p>
+            <img src="@signatureImage" alt="@Model?.Value("aboutUsImgAltText")">
+            <p>@Model?.Value("aboutUsImgAltText")</p>
+        </div>
+        <div class="submit-form">
+            <h3>Request a call back</h3>
+                <form method="post">
+                    <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
+                    <div id="form-name" class="input-group">
+                        <label for="name"></label>
+                        <input type="text" name="name" placeholder="Name">
+                    </div>
+                    <div id="form-email" class="input-group">
+                        <label for="email"></label>
+                        <input type="text" name="email" placeholder="Email address">
+                    </div>
+                    <div id="form-phone" class="input-group">
+                        <label for="phone"></label>
+                        <input type="text" name="phone" placeholder="Phone">
+                    </div>
+                    <div id="form-dropdown" class="input-group">
+                        <label for="dropdown-menu"></label>
+                        <select id="dropdown-form-menu" name="dropdown-menu">
+                            <option value="option1">Financial consulting</option>
+                            <option value="option2">Financial consulting</option>
+                            <option value="option3">Financial consulting</option>
+                        </select>
+                     </div>
+                    <button class="btn-accent" type="submit">Submit</button>
+                </form>
+        </div>
+    </div>
+</section>
+<section class="our-services">
+    <div class="container">
+        <div class="headline-services">
+            <span>@Model?.Value("ourServicesSectionTitle")</span>
+            <h2>@Model?.Value("ourServicesHeadline")</h2>
+        </div>
+        <div class="boxes-services">
+
+            @if (selection != null && selection.Any())
+            {
+                @foreach (var item in selection)
+                {
+                    var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+                    var thumbnailText = item?.Value<string>("thumbnailText") ?? "";
+
+                    <div class="card">
+                        <a href="@item?.Url()">
+                            <h4>@item?.Name()</h4>
+                            <img src="@image" alt="@item?.Name()">
+                            <p>@thumbnailText</p>
+                        </a>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No items found</p>
+            }
+        </div>               
+    </div>
+</section>
+
+<section class="trusted-by">
+    <div class="container">
+        <div class="our-story">
+            <h2>@Model?.Value("trustedBySectionHeadline")</h2>
+            <p>@Model?.Value("trustedByText")</p>
+            <a href="@Model?.Value("trustedByButtonUrl")" class="btn-primary">@Model?.Value("trustedByButtonText")</a>
+        </div>
+        <img class="img-map" src="@trustedBybgImg"" alt="dotted world map">
+        <img class="img-employees" src="@trustedByImg" alt="Group photo of employees">
+    </div>
+</section>
+
+<section class="stories bg-primary">
+    <div class="container">
+        <span>@Model?.Value("storiesSectionTitle")</span>
+        <h2>@Model?.Value("storiesHeadline")</h2>
+        <img class="dotted-map" src="@storiesMapImg" alt="">
+            <div class="success-story">
+                <div class="facts">
+                    <span>@Model?.Value("storiesStatisticNr1")</span>
+                    <p>@Model?.Value("storiesStatisticNr1Text")</p>
+                </div>
+                <div class="facts">
+                    <span>@Model?.Value("storiesStatisticNr2")</span>
+                    <p>@Model?.Value("storiesStatisticNr2Text")</p>
+                </div>
+                <div class="facts">
+                    <span>@Model?.Value("storiesStatisticNr3")</span>
+                    <p>@Model?.Value("storiesStatisticNr3Text")</p>
+                </div>
+            </div>
+        <img class="video" src="@storiesImg" alt="">
+    </div>
+</section>
+
+<section class="our-projects">
+    <div class="container">
+        <span>@Model?.Value("ourProjectsSectionTitle")</span>
+        <h2>@Model?.Value("ourProjectsHeadline")</h2>
+    </div>
+        <div class="recent-projects">
+            <a href="#">
+                <img src="@ourProjectsLink1" alt="Annual Report for Juva Inc">
+                <div class="content">
+                    <h5>@Model?.Value("ourProjectsItemHeadline1")</h5>
+                    <p>@Model?.Value("ourProjectsItemText")</p>
+                </div>
+            </a>
+            <a href="#">
+                <img src="@ourProjectsLink2" alt="Business Insights for SP Group Inc">
+                <div class="content">
+                    <h5>@Model?.Value("ourProjectsItemHeadline2")</h5>
+                    <p>@Model?.Value("ourProjectsItemText")</p>
+                </div>
+            </a>
+            <a href="#">
+                <img src="@ourProjectsLink3" alt="Financial advisors to Irra Corp Inc">
+                <div class="content">
+                    <h5>@Model?.Value("ourProjectsItemHeadline3")</h5>
+                    <p>@Model?.Value("ourProjectsItemText")</p>
+                </div>
+            </a>
+            <a href="#">
+                <img src="@ourProjectsLink4" alt="Budget planning for Baccura Inc">
+                <div class="content">
+                    <h5>@Model?.Value("ourProjectsItemHeadline4")</h5>
+                    <p>@Model?.Value("ourProjectsItemText")</p>
+                </div>
+            </a>
+        </div>
+</section>
+@await Html.PartialAsync("static/brands")

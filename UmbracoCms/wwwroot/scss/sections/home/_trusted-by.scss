@@ -1,0 +1,66 @@
+@import "../../mixins/_mixins-media.scss";
+
+.trusted-by {
+
+    .container {
+        padding-top: 6rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .our-story {
+
+            @include desktop {
+                h2 {
+                    line-height: 0.5;
+                }
+
+                span {
+                    font-size: 40px;
+                }
+
+                p {
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
+                    max-width: 60%;
+                }
+            }
+        }
+
+        .img-map {
+            position: absolute;
+            top: 130px;
+            z-index: -1;
+            width: 100%;
+            height: auto;
+
+            @include tablet {
+                position: absolute;
+                top: 90px;
+                z-index: -1;
+            }
+
+            @include desktop {
+                position: absolute;
+                top: 130px;
+                z-index: -1;
+            }
+        }
+
+        .img-employees {
+            width: 100%;
+            height: auto;
+            margin-top: 2rem;
+
+            @include tablet {
+                margin-top: 3rem;
+                width: 100%;
+                height: auto;
+            }
+
+            @include desktop {
+                margin-top: 5rem;
+            }
+        }
+    }
+}

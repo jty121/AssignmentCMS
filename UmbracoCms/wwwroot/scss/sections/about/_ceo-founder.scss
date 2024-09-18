@@ -1,0 +1,76 @@
+@import "../../mixins/_mixins-media.scss";
+
+.ceo-founder {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+
+    @include tablet {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .container {
+        display: grid;
+        padding: 2rem;
+
+        @include tablet {
+            display: grid;
+            padding: 0;
+        }
+
+        @include desktop {
+            display: flex;
+        }
+
+        .content {
+            display: none;
+            padding: 2rem;
+
+            @include desktop {
+                display: block;
+                padding: 3rem 0;
+            }
+
+            img {
+                display: none;
+
+                @include desktop {
+                    display: block;
+                }
+            }
+
+            p {
+                margin-top: 1rem;
+            }
+        }
+
+        .content-info {
+            padding-top: 2rem;
+
+            @include tablet {
+                margin-left: 2rem;
+            }
+
+            blockquote {
+                margin-bottom: 2rem;
+                font-style: italic;
+                font-size: 28px;
+                font-weight: 500;
+
+                @include tablet {
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+
+            p {
+                margin-top: 0.5rem;
+                font-size: 18px;
+
+                @include tablet {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
