@@ -9,8 +9,9 @@
     @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
 }
 
+
 @{
-	var selection = Umbraco.Content(Guid.Parse("30280b1a-e2fd-40fc-95e7-92dc47935fbd"))?
+	var selection = Umbraco.Content(Guid.Parse("783c2e25-0aa7-409a-bfb8-a22d854d78f4"))?
     .ChildrenOfType("projectItemTemplate")
     ?.Where(x => x.IsVisible());
 }
@@ -56,6 +57,29 @@
                 </nav>
             </div>      
         </aside>
+        <div class="tags">
+                <h4>Tags</h4>
+                <div class="tag-btns">
+                    <button class="btn-tags">Report</button>
+                    <button class="btn-tags">Busines plans</button>
+                    <button class="btn-tags">Insights</button>
+                    <button class="btn-tags">Business</button>
+                    <button class="btn-tags">App</button>
+                    <button class="btn-tags">Project</button>
+                    <button class="btn-tags">Finance</button>
+                    <button class="btn-tags">Pricing</button>
+                </div>
+                <form method="post">
+                    <h4>How can we help you?</h4>
+                    <p>online support 24/7, we are here to help you</p>
+
+                <div id="form-email" class="input-group">
+                    <label for="email"></label>
+                    <input type="text" name="email" placeholder="E-mail address">
+                    <i class="fa-light fa-envelope"></i>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 @await Html.PartialAsync("static/contactInformation")

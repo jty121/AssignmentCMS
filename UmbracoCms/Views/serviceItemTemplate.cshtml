@@ -3,6 +3,8 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var contentImg = Model?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title)) {
@@ -14,7 +16,7 @@
         <aside class="support">
             <div class="content">
                 <h4>About us</h4>
-                <img src="/media/images/image-24-min 1.svg" alt="">
+                <img src="@contentImg" alt="@Model?.Value("thumbnailText")">
                 <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
             </div>
                 <form method="post">
@@ -30,9 +32,31 @@
         </aside>
         <div class="key-point">
             <div class="key-info">
-				@Model.Value("pageContent")
+				@Model?.Value("pageContent")
 			</div>
 		</div>
 	</div>
+
 </div>
+    <div class="services-details-form">
+        <div class="container">
+            <h4>Have a question ?</h4>
+            <form method="post">
+                <div id="form-name" class="input-group">
+                    <label for="name"></label>
+                    <input type="text" name="name" placeholder="Name">
+                </div>
+                <div id="form-email" class="input-group">
+                    <label for="email"></label>
+                    <input type="text" name="email" placeholder="Email">
+                </div>
+                <div id="form-message" class="input-group">
+                    <label for="message"></label>
+                    <textarea class="message" name="message" rows="7" cols="50">Question</textarea>
+                </div>
+                    
+                <button class="btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
 @await Html.PartialAsync("static/contactInformation")

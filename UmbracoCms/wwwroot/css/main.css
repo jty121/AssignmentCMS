@@ -672,7 +672,7 @@ form .input-group textarea::placeholder {
 
 .our-services {
   background-color: var(--color-gray);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.25);
 }
 .our-services .container {
   padding-top: 5rem;
@@ -720,7 +720,7 @@ form .input-group textarea::placeholder {
 }
 .our-services .container .boxes-services .card a:hover {
   color: var(--color-primary);
-  box-shadow: 0px 0px 30px 0px rgba(85, 85, 85, 0.1);
+  box-shadow: 0px 0px 30px 10px rgba(85, 85, 85, 0.1);
   transition: ease-in-out 0.3s;
 }
 .our-services .container .boxes-services .card h4 {
@@ -861,6 +861,10 @@ form .input-group textarea::placeholder {
   }
 }
 
+.stories {
+  height: 125vh;
+  padding-bottom: 3rem;
+}
 .stories .container {
   padding-top: 5rem;
   justify-content: center;
@@ -909,6 +913,7 @@ form .input-group textarea::placeholder {
   margin-top: 1rem;
   max-width: 100%;
   height: auto;
+  border-radius: 3px;
 }
 @media (min-width: 768px) {
   .stories .container .video {
@@ -961,6 +966,7 @@ form .input-group textarea::placeholder {
 
 .our-projects {
   padding-bottom: 3rem;
+  padding-top: 4rem;
 }
 .our-projects .container {
   padding-top: 3rem;
@@ -1741,7 +1747,7 @@ form .input-group textarea::placeholder {
 }
 .services-provided .container .boxes-services .card a:hover {
   color: var(--color-primary);
-  box-shadow: 0px 0px 30px 0px rgba(85, 85, 85, 0.1);
+  box-shadow: 0px 0px 30px 10px rgba(85, 85, 85, 0.1);
   transition: ease-in-out 0.3s;
 }
 .services-provided .container .boxes-services .card h4 {
@@ -2117,7 +2123,14 @@ form .input-group textarea::placeholder {
 }
 .project-detail .container .detail-info {
   border-right: 2px solid #ECECEC;
-  padding-right: 4rem;
+  padding-right: 3rem;
+}
+.project-detail .container .detail-info .top-section .img-left {
+  float: left;
+  width: 100%;
+  max-width: 290px;
+  margin-right: 1rem;
+  margin-top: 1rem;
 }
 .project-detail .container .detail-info .top-section i {
   margin-right: 8px;
@@ -2293,7 +2306,7 @@ form .input-group textarea::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 6rem;
+  padding-bottom: 8rem;
 }
 .request img {
   width: 100%;
@@ -2302,12 +2315,13 @@ form .input-group textarea::placeholder {
 .request .container {
   position: absolute;
   width: 70%;
-  top: 30%;
+  top: 25%;
 }
 .request .container .request-form {
   text-align: center;
   background-color: var(--color-light);
-  box-shadow: 3px 3px 15px 3px rgba(85, 85, 85, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 5px 20px 10px rgba(85, 85, 85, 0.1);
 }
 .request .container .request-form .headlines {
   padding-top: 4rem;
@@ -2422,41 +2436,31 @@ form .input-group textarea::placeholder {
     left: 50%;
     top: -15px;
     transform: translate(-50%, -100%);
-    max-width: 1320px;
   }
+}
+.breadcrumb-menu .container .nav h2 {
+  padding: 0 20px;
+  white-space: nowrap;
 }
 .breadcrumb-menu .container .nav .breadcrumb {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding: 0;
 }
-@media (min-width: 768px) {
-  .breadcrumb-menu .container .nav .breadcrumb {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 0;
-  }
-}
-@media (min-width: 1400px) {
-  .breadcrumb-menu .container .nav .breadcrumb {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 0;
-  }
-}
 .breadcrumb-menu .container .nav .breadcrumb li {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-right: 10px;
   list-style: none;
+}
+.breadcrumb-menu .container .nav .breadcrumb li:not(:last-child)::after {
+  content: "\f105";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 400;
+  font-size: 12px;
+  margin-left: 10px;
+  color: inherit;
 }
 .breadcrumb-menu .container .nav .breadcrumb .active {
   color: var(--color-secondary);

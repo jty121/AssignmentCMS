@@ -11,11 +11,10 @@
 @if (!string.IsNullOrEmpty(ViewBag.Title)) {
     @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
 }
-
-@await Html.PartialAsync("static/contactInformation")
+    @await Html.PartialAsync("static/contactInformation")
 
 <div class="request">
-    <img src="@locationImg" alt="Google Maps">
+    <img src="@locationImg" alt="Office location Google Maps">
     <div class="container">
         <div class="request-form">
             <div class="headlines">
@@ -50,4 +49,4 @@
     </div>
 </div>
 
- @await Html.PartialAsync("partials/static/brands.cshtml")
+@await Html.PartialAsync("blockgrid/components/imageSlider")

@@ -46,7 +46,8 @@
                     {
                         @foreach (var item in selection)
                         {
-                            <a href="@item.Url(PublishedUrlProvider)" class="@(item.IsAncestorOrSelf(Model) ? "current" : null)" title="@item.Name">@item.Name</a>
+                            var isCurrent = Model != null && item.IsAncestorOrSelf(Model);
+                            <a href="@item.Url(PublishedUrlProvider)" class="@(isCurrent ? "current" : null)" title="@item.Name">@item.Name</a>
                         }
                     }
                 </div>

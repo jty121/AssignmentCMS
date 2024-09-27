@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{
+    var slides = Model.Value<IEnumerable<BlockListItem>>("imageSlider");
+}
+
+
+@if (slides != null && slides.Any())
+{
+    <section class="brands">
+        <div class="container">
+            <div class="company-brands">
+
+                @foreach (var item in slides)
+                {
+                    var selectedImage = item?.Content.Value<IPublishedContent>("selectedImage")?.Url();
+                    var imageDescription = item?.Content.Value<string>("imageDescription") ?? "";
+
+                    <img src="@selectedImage" alt="@imageDescription">
+
+                }
+            </div>
+        </div>
+    </section>
+}

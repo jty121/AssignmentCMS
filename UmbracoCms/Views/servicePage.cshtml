@@ -5,11 +5,13 @@
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
 	
 }
+
 @{
-	var selection = Umbraco.Content(Guid.Parse("e40f20a4-b2de-46f0-8e59-4772e4098e8c"))?
+	var selection = Umbraco.Content(Guid.Parse("1ca93527-fa78-4044-a788-cb5c6edf0d46"))?
     .ChildrenOfType("serviceItemTemplate")
     ?.Where(x => x.IsVisible());
 }
+
 @if (!string.IsNullOrEmpty(ViewBag.Title)) {
     @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
 }
