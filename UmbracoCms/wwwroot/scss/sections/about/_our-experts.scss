@@ -23,6 +23,10 @@
         }
 
         .members {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
 
             .card-top {
                 display: grid;
@@ -30,26 +34,23 @@
                 gap: 2rem;
                 margin-top: 3rem;
 
-                @include tablet {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;
-                    gap: 2rem;
-                    margin-top: 3rem;
-                }
 
                 @include desktop {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;
+                    display: grid !important;
+                    grid-template-columns: 1fr !important;
                     gap: 2rem;
                     margin-top: 3rem;
                 }
 
 
                 .card {
-                    border: 2px solid var(--color-gray);
-                    border-radius: 4px;
+
 
                     a {
+                        border: 2px solid var(--color-gray);
+                        border-radius: 4px;
+                        margin: 1rem;
+
                         img {
                             width: 390px;
                             height: auto;
@@ -81,65 +82,7 @@
                         }
                     }
                 }
-            }
-
-            .card-bottom {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                margin-top: 3rem;
-
-                @include tablet {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr 1fr;
-                    gap: 2rem;
-                    margin-top: 3rem;
-                }
-
-                @include desktop {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr 1fr;
-                    gap: 2rem;
-                    margin-top: 3rem;
-                }
-
-                .card {
-                    border: 2px solid var(--color-gray);
-                    border-radius: 4px;
-
-                    a {
-                        img {
-                            width: 390px;
-                            height: auto;
-
-                            @include tablet {
-                                width: 100%;
-                                height: auto;
-                            }
-
-                            @include desktop {
-                                width: 100%;
-                                height: auto;
-                            }
-                        }
-
-                        h4 {
-                            padding: 1rem 1rem 0;
-                        }
-
-                        p {
-                            color: #9C9EA6;
-                            padding-left: 1rem;
-                        }
-
-                        &:hover {
-                            color: var(--color-primary);
-                            box-shadow: 0px 0px 30px 0px rgba(85, 85, 85, 0.1);
-                            transition: ease-in-out 0.3s;
-                        }
-                    }
-                }
-            }
+            }    
         }
     }
 }

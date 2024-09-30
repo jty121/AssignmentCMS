@@ -966,7 +966,7 @@ form .input-group textarea::placeholder {
 
 .our-projects {
   padding-bottom: 3rem;
-  padding-top: 4rem;
+  padding-top: 5rem;
 }
 .our-projects .container {
   padding-top: 3rem;
@@ -995,46 +995,46 @@ form .input-group textarea::placeholder {
     text-align: start;
   }
 }
-.our-projects .recent-projects {
+.our-projects #recent-projects {
   display: grid;
   grid-template-columns: 1fr;
 }
 @media (min-width: 768px) {
-  .our-projects .recent-projects {
+  .our-projects #recent-projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 }
 @media (min-width: 1400px) {
-  .our-projects .recent-projects {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  .our-projects #recent-projects {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
   }
 }
-.our-projects .recent-projects a {
-  position: relative;
+.our-projects #recent-projects a {
+  position: relative !important;
   overflow: hidden;
 }
-.our-projects .recent-projects a img {
+.our-projects #recent-projects a img {
   width: 100%;
   height: auto;
 }
-.our-projects .recent-projects a .content {
+.our-projects #recent-projects a .content {
   padding: 1rem;
-  position: absolute;
+  position: absolute !important;
   bottom: 0;
-  width: 100%;
+  width: 100% !important;
   background-color: rgba(79, 89, 85, 0.4);
   transition: background-color 0.3s;
 }
-.our-projects .recent-projects a .content h5 {
+.our-projects #recent-projects a .content h5 {
   color: #ffffff;
   font-weight: 400;
 }
-.our-projects .recent-projects a .content p {
+.our-projects #recent-projects a .content p {
   color: #ffffff;
 }
-.our-projects .recent-projects a .content::after {
+.our-projects #recent-projects a .content::after {
   content: "\f105";
   font-family: "Font Awesome 6 Pro";
   font-size: 40px;
@@ -1045,15 +1045,15 @@ form .input-group textarea::placeholder {
   opacity: 0;
   transition: opacity 0.3s;
 }
-.our-projects .recent-projects a:hover h5 {
+.our-projects #recent-projects a:hover h5 {
   color: var(--color-secondary);
   font-weight: 700;
 }
-.our-projects .recent-projects a:hover .content {
+.our-projects #recent-projects a:hover .content {
   padding: 2rem;
   background-color: var(--color-primary);
 }
-.our-projects .recent-projects a:hover .content::after {
+.our-projects #recent-projects a:hover .content::after {
   opacity: 1;
 }
 
@@ -1417,31 +1417,30 @@ form .input-group textarea::placeholder {
 .our-experts .container .headline h2 {
   margin-bottom: 0;
 }
+.our-experts .container .members {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .our-experts .container .members .card-top {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 3rem;
 }
-@media (min-width: 768px) {
-  .our-experts .container .members .card-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-}
 @media (min-width: 1400px) {
   .our-experts .container .members .card-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
     gap: 2rem;
     margin-top: 3rem;
   }
 }
-.our-experts .container .members .card-top .card {
+.our-experts .container .members .card-top .card a {
   border: 2px solid var(--color-gray);
   border-radius: 4px;
+  margin: 1rem;
 }
 .our-experts .container .members .card-top .card a img {
   width: 390px;
@@ -1467,60 +1466,6 @@ form .input-group textarea::placeholder {
   padding-left: 1rem;
 }
 .our-experts .container .members .card-top .card a:hover {
-  color: var(--color-primary);
-  box-shadow: 0px 0px 30px 0px rgba(85, 85, 85, 0.1);
-  transition: ease-in-out 0.3s;
-}
-.our-experts .container .members .card-bottom {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-@media (min-width: 768px) {
-  .our-experts .container .members .card-bottom {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-}
-@media (min-width: 1400px) {
-  .our-experts .container .members .card-bottom {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-}
-.our-experts .container .members .card-bottom .card {
-  border: 2px solid var(--color-gray);
-  border-radius: 4px;
-}
-.our-experts .container .members .card-bottom .card a img {
-  width: 390px;
-  height: auto;
-}
-@media (min-width: 768px) {
-  .our-experts .container .members .card-bottom .card a img {
-    width: 100%;
-    height: auto;
-  }
-}
-@media (min-width: 1400px) {
-  .our-experts .container .members .card-bottom .card a img {
-    width: 100%;
-    height: auto;
-  }
-}
-.our-experts .container .members .card-bottom .card a h4 {
-  padding: 1rem 1rem 0;
-}
-.our-experts .container .members .card-bottom .card a p {
-  color: #9C9EA6;
-  padding-left: 1rem;
-}
-.our-experts .container .members .card-bottom .card a:hover {
   color: var(--color-primary);
   box-shadow: 0px 0px 30px 0px rgba(85, 85, 85, 0.1);
   transition: ease-in-out 0.3s;

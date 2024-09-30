@@ -2,7 +2,7 @@
 
 .our-projects {
     padding-bottom: 3rem;
-    padding-top: 4rem;
+    padding-top: 5rem;
     .container {
         padding-top: 3rem;
 
@@ -30,7 +30,7 @@
         }
     }
 
-    .recent-projects {
+    #recent-projects {
         display: grid;
         grid-template-columns: 1fr;
 
@@ -40,12 +40,12 @@
         }
 
         @include desktop {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr 1fr 1fr !important;
         }
 
         a {
-            position: relative;
+            position: relative !important;
             overflow: hidden; //döljer allt som går utanför länken
 
             img {
@@ -55,9 +55,9 @@
 
             .content {
                 padding: 1rem;
-                position: absolute;
+                position: absolute !important;
                 bottom: 0;
-                width: 100%;
+                width: 100% !important;
                 background-color: rgba(79, 89, 85, 0.4); // använd rgba istället för opacity. opacity påverkar alla child objekt
                 transition: background-color 0.3s;
 

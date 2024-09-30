@@ -13,10 +13,6 @@
     var storiesMapImg = Model?.Value<IPublishedContent>("storiesBackgroundImg")?.Url() ?? "";
     var storiesImg = Model?.Value<IPublishedContent>("storiesSelectedPhotoImg")?.Url() ?? "";
 
-    var ourProjectsLink1 = Model?.Value<IPublishedContent>("ourProjectsItemImg1")?.Url() ?? "";
-    var ourProjectsLink2 = Model?.Value<IPublishedContent>("ourProjectsItemImg2")?.Url() ?? "";
-    var ourProjectsLink3 = Model?.Value<IPublishedContent>("ourProjectsItemImg3")?.Url() ?? "";
-    var ourProjectsLink4 = Model?.Value<IPublishedContent>("ourProjectsItemImg4")?.Url() ?? "";
 }
 
 @{
@@ -149,35 +145,6 @@
         <span>@Model?.Value("ourProjectsSectionTitle")</span>
         <h2>@Model?.Value("ourProjectsHeadline")</h2>
     </div>
-        <div class="recent-projects">
-            <a href="#">
-                <img src="@ourProjectsLink1" alt="Annual Report for Juva Inc">
-                <div class="content">
-                    <h5>@Model?.Value("ourProjectsItemHeadline1")</h5>
-                    <p>@Model?.Value("ourProjectsItemText")</p>
-                </div>
-            </a>
-            <a href="#">
-                <img src="@ourProjectsLink2" alt="Business Insights for SP Group Inc">
-                <div class="content">
-                    <h5>@Model?.Value("ourProjectsItemHeadline2")</h5>
-                    <p>@Model?.Value("ourProjectsItemText")</p>
-                </div>
-            </a>
-            <a href="#">
-                <img src="@ourProjectsLink3" alt="Financial advisors to Irra Corp Inc">
-                <div class="content">
-                    <h5>@Model?.Value("ourProjectsItemHeadline3")</h5>
-                    <p>@Model?.Value("ourProjectsItemText")</p>
-                </div>
-            </a>
-            <a href="#">
-                <img src="@ourProjectsLink4" alt="Budget planning for Baccura Inc">
-                <div class="content">
-                    <h5>@Model?.Value("ourProjectsItemHeadline4")</h5>
-                    <p>@Model?.Value("ourProjectsItemText")</p>
-                </div>
-            </a>
-        </div>
+    @await Html.PartialAsync("blockgrid/components/ourProjectsImageSlider")
 </section>
 @await Html.PartialAsync("blockgrid/components/imageSlider")

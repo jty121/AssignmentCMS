@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{
+    var slides = Model.Value<IEnumerable<BlockListItem>>("ourProjectsImageSlider");
+}
+
+
+@if (slides != null && slides.Any())
+{
+
+        <div id="recent-projects">
+                 
+                 @foreach (var item in slides)
+                {
+               
+                    var selectedImage = item?.Content.Value<IPublishedContent>("selectedImage")?.Url();
+                    var imgDescription = item?.Content.Value<string>("imageDescription");
+                    var customHeadline = item?.Content.Value<string>("imageCustomHeadline");
+                    var contentText = item?.Content.Value<string>("imageContentText");
+                    <a href="#">
+                        <img src="@selectedImage" alt="@imgDescription">
+                        <div class="content">
+                            <h5>@customHeadline</h5>
+                            <p>@contentText</p>
+                        </div>
+                    </a>
+                } 
+        </div>
+}

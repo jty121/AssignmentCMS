@@ -8,14 +8,6 @@
 
     var ratingImage = Model?.Value<IPublishedContent>("reviewsReviewImg")?.Url() ?? "";
     var reviewSectionImg = Model?.Value<IPublishedContent>("reviewSectionImg")?.Url() ?? "";
-
-    var teamMemberImg1 = Model?.Value<IPublishedContent>("ourExpertsTeamImg1")?.Url() ?? "";
-    var teamMemberImg2 = Model?.Value<IPublishedContent>("ourExpertsTeamImg2")?.Url() ?? "";
-    var teamMemberImg3 = Model?.Value<IPublishedContent>("ourExpertsTeamImg3")?.Url() ?? "";
-    var teamMemberImg4 = Model?.Value<IPublishedContent>("ourExpertsTeamImg4")?.Url() ?? "";
-    var teamMemberImg5 = Model?.Value<IPublishedContent>("ourExpertsTeamImg5")?.Url() ?? "";
-    var teamMemberImg6 = Model?.Value<IPublishedContent>("ourExpertsTeamImg6")?.Url() ?? "";
-    var teamMemberImg7 = Model?.Value<IPublishedContent>("ourExpertsTeamImg7")?.Url() ?? "";
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title)) {
@@ -57,61 +49,7 @@
             <span>@Model?.Value("ourExpertsSectionTitle")</span>
             <h2>@Model?.Value("ourExpertsSectionHeadline")</h2>
         </div>
-        <div class="members">
-                <div class="card-top">
-                    <div class="card">
-                        <a href="#">
-                            <img src="@teamMemberImg1" alt="@Model?.Value("ourExpertsTeamImgHeadline1")">
-                            <h4>@Model?.Value("ourExpertsTeamImgHeadline1")</h4>
-                            <p>@Model?.Value("ourExpertsTeamImgText1")</p>
-                        </a> 
-                    </div>
-                    <div class="card">
-                        <a href="#">
-                            <img src="@teamMemberImg2" alt="@Model?.Value("ourExpertsTeamImgHeadline2")">
-                            <h4>@Model?.Value("ourExpertsTeamImgHeadline2")</h4>
-                            <p>@Model?.Value("ourExpertsTeamImgText2")</p>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="#">
-                            <img src="@teamMemberImg3" alt="@Model?.Value("ourExpertsTeamImgHeadline3")">
-                            <h4>@Model?.Value("ourExpertsTeamImgHeadline3")</h4>
-                            <p>@Model?.Value("ourExpertsTeamImgText3")</p>
-                        </a>
-                	</div>
-                </div>
-            <div class="card-bottom">
-                <div class="card">
-                    <a href="#">
-                        <img src="@teamMemberImg4" alt="@Model?.Value("ourExpertsTeamImgHeadline4")">
-                        <h4>@Model?.Value("ourExpertsTeamImgHeadline4")</h4>
-                       <p>@Model?.Value("ourExpertsTeamImgText4")</p>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="#">
-                        <img src="@teamMemberImg5" alt="@Model?.Value("ourExpertsTeamImgHeadline5")">
-                        <h4>@Model?.Value("ourExpertsTeamImgHeadline5")</h4>
-                        <p>@Model?.Value("ourExpertsTeamImgText5")</p>
-                    </a> 
-                </div>
-                <div class="card">
-                    <a href="#">
-                        <img src="@teamMemberImg6" alt="@Model?.Value("ourExpertsTeamImgHeadline6")">
-                        <h4>@Model?.Value("ourExpertsTeamImgHeadline6")</h4>
-                        <p>@Model?.Value("ourExpertsTeamImgText6")</p>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="#">
-                        <img src="@teamMemberImg7" alt="@Model?.Value("ourExpertsTeamImgHeadline7")">
-                        <h4>@Model?.Value("ourExpertsTeamImgHeadline7")</h4>
-                        <p>@Model?.Value("ourExpertsTeamImgText7")</p>
-                    </a>
-                </div>
-            </div>
-        </div>
+       @await Html.PartialAsync("blockgrid/components/ourExpertsImageSlider")
     </div>
 </div>
 @await Html.PartialAsync("static/contactInformation")
