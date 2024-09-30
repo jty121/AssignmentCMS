@@ -3,6 +3,13 @@
 @{
 	Layout = "mainLayout.cshtml";
     ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+
+    var currentPage = Model;
+    var projectPage = currentPage.Parent<IPublishedContent>();
+    
+    var selectedTags = currentPage.HasValue("selectedKeywords") ? currentPage.Value<IEnumerable<string>>("selectedKeywords") : Enumerable.Empty<string>();
+    var pageKeywords = projectPage?.HasValue("pageKeywords") == true ? projectPage.Value<IEnumerable<string>>("pageKeywords") : Enumerable.Empty<string>();
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title)) {
@@ -17,9 +24,13 @@
                 @Model?.Value("pageContent")
                 <div class="choosed-tags">
                     <h5>Tags:</h5>
-                    <span>Business</span>
-                    <span>Consulting</span>
-                    <span>Onatrix</span>
+                    @if (selectedTags.Any()) 
+                    {
+                        foreach(var tag in selectedTags)
+                        {
+                             <span>@tag</span>
+                        }
+                    }
                 </div>
             </div>   
 		</aside>
@@ -58,14 +69,13 @@
             <div class="tags">
                 <h4>Tags</h4>
                 <div class="tag-btns">
-                    <button class="btn-tags">Report</button>
-                    <button class="btn-tags">Busines plans</button>
-                    <button class="btn-tags">Insights</button>
-                    <button class="btn-tags">Business</button>
-                    <button class="btn-tags">App</button>
-                    <button class="btn-tags">Project</button>
-                    <button class="btn-tags">Finance</button>
-                    <button class="btn-tags">Pricing</button>
+                    @if (pageKeywords.Any())
+                    {
+                        foreach (var tag in pageKeywords)
+                        {
+                             <button class="btn-tags">@tag</button>
+                        }
+                    }
                 </div>
                 <form method="post">
                     <h4>How can we help you?</h4>
