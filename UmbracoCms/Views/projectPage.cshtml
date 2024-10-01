@@ -3,6 +3,8 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var pageKeywords = Model?.Value<IEnumerable<string>>("pageKeywords") ?? Enumerable.Empty<string>();
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title)) {
@@ -23,11 +25,12 @@
 
                 @if (selection != null && selection.Any())
                 {
+                    
                     @foreach (var item in selection)
                     {
                         var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
                         var thumbnailText = item?.Value<string>("thumbnailText") ?? "";
-                        var thumbnailDate = item?.Value<string>("thumbnailDate") ?? "";
+                        var thumbnailDate = item?.Value<string>("thumbnailDate") ?? "";   
 
                         <div class="read-more">
                             <div>
@@ -58,16 +61,15 @@
             </div>      
         </aside>
         <div class="tags">
-                <h4>Tags</h4>
+                <h4>@Model?.Value("pageKeywordsTitle")</h4>
                 <div class="tag-btns">
-                    <button class="btn-tags">Report</button>
-                    <button class="btn-tags">Busines plans</button>
-                    <button class="btn-tags">Insights</button>
-                    <button class="btn-tags">Business</button>
-                    <button class="btn-tags">App</button>
-                    <button class="btn-tags">Project</button>
-                    <button class="btn-tags">Finance</button>
-                    <button class="btn-tags">Pricing</button>
+                    @if (pageKeywords != null && pageKeywords.Any())
+                    {
+                        foreach (var tag in pageKeywords)
+                        {
+                             <button class="btn-tags">@tag</button>
+                        }
+                    }
                 </div>
                 <form method="post">
                     <h4>How can we help you?</h4>

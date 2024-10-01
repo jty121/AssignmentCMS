@@ -6,9 +6,9 @@
 
 
     var currentPage = Model;
-    var projectPage = currentPage.Parent<IPublishedContent>();
+    var projectPage = currentPage?.Parent<IPublishedContent>();
     
-    var selectedTags = currentPage.HasValue("selectedKeywords") ? currentPage.Value<IEnumerable<string>>("selectedKeywords") : Enumerable.Empty<string>();
+    var selectedTags = currentPage?.Value<IEnumerable<string>>("selectedKeywords") ?? Enumerable.Empty<string>();
     var pageKeywords = projectPage?.HasValue("pageKeywords") == true ? projectPage.Value<IEnumerable<string>>("pageKeywords") : Enumerable.Empty<string>();
 }
 
@@ -23,7 +23,7 @@
             <div class="top-section">
                 @Model?.Value("pageContent")
                 <div class="choosed-tags">
-                    <h5>Tags:</h5>
+                    <h5>@Model?.Value("selectedKeywordsTitle")</h5>
                     @if (selectedTags.Any()) 
                     {
                         foreach(var tag in selectedTags)
@@ -35,41 +35,12 @@
             </div>   
 		</aside>
 		<div class="recent-projects">
-            <h5>Recent Projects</h5>
-                <div class="content">
-                    <div class="project">
-                        <div class="bg-color"></div>
-                        <div>
-                            <h6>Annual Report for Juva Inc.</h6>
-                            <i class="fa-duotone fa-solid fa-calendar-days"></i><span>June 15, 2024</span>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <div class="bg-color"></div>
-                        <div>
-                            <h6>Business Insights for SP Group Inc.</h6>
-                            <i class="fa-duotone fa-solid fa-calendar-days"></i><span>May 17, 2024</span>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <div class="bg-color"></div>
-                        <div>
-                            <h6>Financial Advisors to Irra Group Inc.</h6>
-                            <i class="fa-duotone fa-solid fa-calendar-days"></i><span>February 6, 2024</span>
-                        </div>
-                    </div>
-                    <div class="project-last">
-                        <div class="bg-color"></div>
-                        <div>
-                            <h6>Budget Planning for Buccura Inc.</h6>
-                            <i class="fa-duotone fa-solid fa-calendar-days"></i><span>January 3, 2024</span>
-                        </div> 
-                    </div>
-                </div>
+            <h5>@Model?.Value("recentProjectSectionTitle")</h5>
+                @await Html.PartialAsync("blockgrid/components/recentProjectSlider")
             <div class="tags">
                 <h4>Tags</h4>
                 <div class="tag-btns">
-                    @if (pageKeywords.Any())
+                    @if (pageKeywords != null && pageKeywords.Any())
                     {
                         foreach (var tag in pageKeywords)
                         {

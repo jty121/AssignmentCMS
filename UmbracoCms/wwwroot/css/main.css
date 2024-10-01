@@ -1050,7 +1050,7 @@ form .input-group textarea::placeholder {
   font-weight: 700;
 }
 .our-projects #recent-projects a:hover .content {
-  padding: 2rem;
+  padding: 1rem;
   background-color: var(--color-primary);
 }
 .our-projects #recent-projects a:hover .content::after {
@@ -1154,7 +1154,7 @@ form .input-group textarea::placeholder {
 @media (min-width: 1400px) {
   .ceo-founder .container .content {
     display: block;
-    padding: 3rem 0;
+    padding: 4rem 0;
   }
 }
 .ceo-founder .container .content img {
@@ -1169,7 +1169,7 @@ form .input-group textarea::placeholder {
   margin-top: 1rem;
 }
 .ceo-founder .container .content-info {
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 @media (min-width: 768px) {
   .ceo-founder .container .content-info {
@@ -1177,7 +1177,7 @@ form .input-group textarea::placeholder {
   }
 }
 .ceo-founder .container .content-info blockquote {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-style: italic;
   font-size: 28px;
   font-weight: 500;
@@ -1185,11 +1185,11 @@ form .input-group textarea::placeholder {
 @media (min-width: 768px) {
   .ceo-founder .container .content-info blockquote {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 300;
   }
 }
 .ceo-founder .container .content-info p {
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   font-size: 18px;
 }
 @media (min-width: 768px) {
@@ -1326,7 +1326,7 @@ form .input-group textarea::placeholder {
   font-style: italic;
   font-size: 20px;
   color: #2D303A;
-  text-shadow: 4px 5px 3px rgba(0, 0, 0, 0.1);
+  text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.1);
 }
 .review .container .aside {
   position: relative;
@@ -1920,7 +1920,7 @@ form .input-group textarea::placeholder {
 }
 
 .projects {
-  padding-top: 5rem;
+  padding-top: 3rem;
   padding-bottom: 3rem;
 }
 .projects .container {
@@ -1929,25 +1929,26 @@ form .input-group textarea::placeholder {
 }
 .projects .container .project-list {
   border-right: 2px solid #ECECEC;
+  padding-right: 2rem;
 }
 .projects .container .project-list .content {
   display: grid;
 }
 .projects .container .project-list .content .read-more {
   display: flex;
-  width: 90%;
+  width: 100%;
   padding: 2rem 0;
   border-bottom: 2px solid #ECECEC;
 }
 .projects .container .project-list .content .read-more img {
-  width: 100%;
-  height: auto;
+  width: 370px;
+  height: 200px;
+  object-fit: cover;
+  object-position: 50% 20%;
 }
 .projects .container .project-list .content .read-more .info {
   display: grid;
-  justify-content: space-between;
   margin-left: 2rem;
-  width: 80%;
 }
 .projects .container .project-list .content .read-more .info i {
   color: #9C9EA6;
@@ -1960,41 +1961,13 @@ form .input-group textarea::placeholder {
 }
 .projects .container .project-list .content .read-more .info a {
   font-weight: 600;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 .projects .container .project-list .content .read-more .info a i {
   margin-left: 8px;
 }
-.projects .container .project-list .content .read-more-last {
-  display: flex;
-  width: 90%;
-  padding: 2rem 0;
-}
-.projects .container .project-list .content .read-more-last img {
-  width: 100%;
-  height: auto;
-}
-.projects .container .project-list .content .read-more-last .info {
-  display: grid;
-  justify-content: space-between;
-  margin-left: 2rem;
-  width: 80%;
-}
-.projects .container .project-list .content .read-more-last .info i {
-  color: #9C9EA6;
-  margin-right: 8px;
-}
-.projects .container .project-list .content .read-more-last .info span {
-  color: #9C9EA6;
-  font-size: 14px;
-  font-weight: 400;
-}
-.projects .container .project-list .content .read-more-last .info a {
-  font-weight: 600;
-  margin-top: 3rem;
-}
-.projects .container .project-list .content .read-more-last .info a i {
-  margin-left: 8px;
+.projects .container .project-list .content .read-more:last-of-type {
+  border-bottom: none;
 }
 .projects .container .project-list .content .pagination {
   display: flex;
@@ -2024,8 +1997,9 @@ form .input-group textarea::placeholder {
   font-weight: 600;
 }
 .projects .container .tags {
-  padding-left: 4rem;
+  padding-left: 2rem;
   padding-top: 2rem;
+  width: 45%;
 }
 .projects .container .tags .tag-btns .btn-tags {
   margin: 10px 8px 10px 0;
@@ -2036,7 +2010,7 @@ form .input-group textarea::placeholder {
   border-radius: 4px;
   padding: 2rem;
   margin-top: 3rem;
-  width: 95%;
+  width: 100%;
 }
 .projects .container .tags form h4 {
   color: var(--color-accent);
@@ -2171,46 +2145,34 @@ form .input-group textarea::placeholder {
 .project-detail .container .recent-projects h5 {
   margin-bottom: 1rem;
 }
-.project-detail .container .recent-projects .content .project {
+.project-detail .container .recent-projects #recentProjectContent .project .projectItem {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
   border-bottom: 2px solid #ECECEC;
-  padding: 1rem 1rem 1rem 0;
 }
-.project-detail .container .recent-projects .content .project .bg-color {
-  padding: 40px 80px;
-  background-color: #C4C4C4;
+.project-detail .container .recent-projects #recentProjectContent .project .projectItem img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  object-position: 50% 20%;
 }
-.project-detail .container .recent-projects .content .project h6 {
+.project-detail .container .recent-projects #recentProjectContent .project .projectItem h6 {
   color: var(--color-primary);
 }
-.project-detail .container .recent-projects .content .project i {
+.project-detail .container .recent-projects #recentProjectContent .project .projectItem i {
   color: #9C9EA6;
   margin-right: 8px;
 }
-.project-detail .container .recent-projects .content .project span {
+.project-detail .container .recent-projects #recentProjectContent .project .projectItem span {
   color: #9C9EA6;
   font-weight: 400;
 }
-.project-detail .container .recent-projects .content .project-last {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 1rem 1rem 0;
-}
-.project-detail .container .recent-projects .content .project-last .bg-color {
-  padding: 40px 80px;
-  background-color: #C4C4C4;
-}
-.project-detail .container .recent-projects .content .project-last h6 {
-  color: var(--color-primary);
-}
-.project-detail .container .recent-projects .content .project-last i {
-  color: #9C9EA6;
-  margin-right: 8px;
-}
-.project-detail .container .recent-projects .content .project-last span {
-  color: #9C9EA6;
-  font-weight: 400;
+.project-detail .container .recent-projects #recentProjectContent .project .projectItem:last-child {
+  border-bottom: none;
 }
 .project-detail .container .recent-projects .tags {
   padding-top: 2rem;

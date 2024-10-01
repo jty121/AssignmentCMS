@@ -134,55 +134,43 @@
                 margin-bottom: 1rem;
             }
 
-            .content {
+            #recentProjectContent {
+
                 .project {
-                    display: flex;
-                    gap: 1rem;
-                    border-bottom: 2px solid #ECECEC;
-                    padding: 1rem 1rem 1rem 0;
 
-                    .bg-color {
-                        padding: 40px 80px;
-                        background-color: #C4C4C4;
+                    .projectItem {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 1rem;
+                        padding-bottom: 1rem;
+                        padding-top: 1rem;
+                        border-bottom: 2px solid #ECECEC;
+
+                        img {
+                            width: 150px;
+                            height: 100px;
+                            object-fit: cover;
+                            object-position: 50% 20%;
+                        }
+
+                        h6 {
+                            color: var(--color-primary);
+                        }
+
+                        i {
+                            color: #9C9EA6;
+                            margin-right: 8px;
+                        }
+
+                        span {
+                            color: #9C9EA6;
+                            font-weight: 400;
+                        }
                     }
 
-                    h6 {
-                        color: var(--color-primary);
-                    }
-
-                    i {
-                        color: #9C9EA6;
-                        margin-right: 8px;
-                    }
-
-                    span {
-                        color: #9C9EA6;
-                        font-weight: 400;
-                    }
-                }
-
-                .project-last {
-                    display: flex;
-                    gap: 1rem;
-                    padding: 1rem 1rem 1rem 0;
-
-                    .bg-color {
-                        padding: 40px 80px;
-                        background-color: #C4C4C4;
-                    }
-
-                    h6 {
-                        color: var(--color-primary);
-                    }
-
-                    i {
-                        color: #9C9EA6;
-                        margin-right: 8px;
-                    }
-
-                    span {
-                        color: #9C9EA6;
-                        font-weight: 400;
+                    .projectItem:last-child {
+                        border-bottom: none;
                     }
                 }
             }
