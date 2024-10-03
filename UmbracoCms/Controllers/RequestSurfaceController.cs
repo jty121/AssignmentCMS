@@ -12,7 +12,7 @@ namespace UmbracoCms.Controllers;
 
 public class RequestSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider) : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
 {
-    public IActionResult HandleSubmit(RequestFormModel form)
+    public IActionResult HandleRequestSubmit(RequestFormModel form)
     {
         if(!ModelState.IsValid)
         {
@@ -28,9 +28,29 @@ public class RequestSurfaceController(IUmbracoContextAccessor umbracoContextAcce
             ViewData["error_option"] = string.IsNullOrEmpty(form.SelectedOption);
 
             return CurrentUmbracoPage();
+            // används oftast för att behålla användaren på samma sida utan att ändra URL, visar samma sida igen men med ny data ex. felmeddelanden
         }
 
         TempData["success"] = "Request send successfully";
-        return CurrentUmbracoPage();
+        return RedirectToCurrentUmbracoPage(); 
+        // används ofta efter en lyckad formulärhantering, delvis för att förhindra att formuläret skickas på nytt om användaren uppdaterar sidan. Följer PRG mönster (post,redirect,get)
+    }
+
+    public IActionResult HandleQuestionSubmit(QuestionFormModel form)
+    {
+        if(!ModelState.IsValid)
+        {
+            ViewData["name"] = form.Name;
+            ViewData["email"] = form.Email;
+            ViewData["message"] = form.Message;
+
+            ViewData["error_name"] = string.IsNullOrEmpty(form.Name);
+            ViewData["error_email"] = string.IsNullOrEmpty(form.Email);
+            ViewData["error_message"] = string.IsNullOrEmpty(form.Message);
+
+            return CurrentUmbracoPage();
+        }
+        TempData["success"] = "Your question was send successfully";
+        return RedirectToCurrentUmbracoPage();
     }
 }

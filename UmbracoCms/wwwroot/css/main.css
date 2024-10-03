@@ -314,8 +314,13 @@ form .input-group textarea {
   font-style: italic;
   color: #AAAAAA;
 }
-form .input-group textarea::placeholder {
-  opacity: 0.4;
+form .input-group textarea .form-invalid-input {
+  display: block;
+  margin-top: 8px;
+  margin-left: 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ff585d;
 }
 
 .container {
@@ -1978,6 +1983,24 @@ form .input-group textarea::placeholder {
 }
 .services-details-form form .input-group ::placeholder {
   color: #AAAAAA;
+}
+.services-details-form .success-message {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  border: 2px solid var(--color-gray);
+  border-radius: 5px;
+}
+.services-details-form .success-message i {
+  text-align: center;
+  font-size: 6rem;
+  padding: 1rem;
+  color: var(--color-primary);
+  opacity: 0.1;
 }
 
 .projects-menu {

@@ -5,6 +5,11 @@
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
     var contentImg = Model?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+
+
+    bool.TryParse(ViewData["error_name"]?.ToString()!, out bool error_name);
+    bool.TryParse(ViewData["error_email"]?.ToString()!, out bool error_email);
+    bool.TryParse(ViewData["error_message"]?.ToString()!, out bool error_message);
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title)) {
@@ -41,22 +46,34 @@
     <div class="services-details-form">
         <div class="container">
             <h4>Have a question ?</h4>
-            <form method="post">
-                <div id="form-name" class="input-group">
-                    <label for="name"></label>
-                    <input type="text" name="name" placeholder="Name">
-                </div>
-                <div id="form-email" class="input-group">
-                    <label for="email"></label>
-                    <input type="text" name="email" placeholder="Email">
-                </div>
-                <div id="form-message" class="input-group">
-                    <label for="message"></label>
-                    <textarea class="message" name="message" rows="7" cols="50">Question</textarea>
-                </div>
-                    
-                <button class="btn-primary">Submit</button>
-            </form>
+            
+            @if (TempData["success"] != null)
+            {
+            <div class="success-message">@TempData["success"]<i class="fa-solid fa-envelope-circle-check"></i></div>
+            }
+            else
+            {
+                @using (Html.BeginUmbracoForm("HandleQuestionSubmit", "RequestSurface", FormMethod.Post))
+                {
+                    <div id="form-name" class="input-group">
+                        <label for="name"></label>
+                        <input type="text" name="name" placeholder="Name" value="@ViewData["name"]">
+                        <span class="form-input-error @((error_name)? "form-invalid-input" : null)">You must enter your name</span>
+                    </div>
+                    <div id="form-email" class="input-group">
+                        <label for="email"></label>
+                        <input type="text" name="email" placeholder="Email" value="@ViewData["email"]">
+                        <span class="form-input-error @((error_email)? "form-invalid-input" : null)">You must enter your email address</span>
+                    </div>
+                    <div id="form-message" class="input-group">
+                        <label for="message"></label>
+                        <textarea class="message" name="message" rows="7" cols="50" placeholder="Question">@ViewData["message"]</textarea>
+                        <span class="form-input-error @((error_message)? "form-invalid-input" : null)">You must enter a message</span>
+                    </div>
+
+                    <button class="btn-primary" type="submit">@Model?.Value("questionFormButtonText")</button>
+                }
+            }
         </div>
     </div>
 @await Html.PartialAsync("static/contactInformation")

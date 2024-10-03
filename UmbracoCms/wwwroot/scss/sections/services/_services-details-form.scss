@@ -1,35 +1,58 @@
-.services-details-form{
+.services-details-form {
     padding-bottom: 4rem;
 
-    h4{
-       font-size: 25px; 
+    h4 {
+        font-size: 25px;
     }
 
-    form{
+    form {
         display: grid;
-        grid-template-areas: 
-            "name email"
+        grid-template-areas:
+            "name email" 
             "message message";
         gap: 1.5rem;
-       
+
         #form-name {
             grid-area: name;
         }
-        #form-email{
+
+        #form-email {
             grid-area: email;
         }
-        #form-message{
+
+        #form-message {
             grid-area: message;
-        } 
-        .btn-primary{
+        }
+
+        .btn-primary {
             justify-self: start; //justera knappen i en grid för att återgå till standardstorlek
-        }                   
-       
-        .input-group{
-            
+        }
+
+        .input-group {
+
             ::placeholder {
                 color: #AAAAAA;
             }
+        }
+    }
+
+    .success-message {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 500;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        border: 2px solid var(--color-gray);
+        border-radius: 5px;
+
+        i {
+            text-align: center;
+            font-size: 6rem;
+            padding: 1rem;
+            color: var(--color-primary);
+            opacity: 0.1;
         }
     }
 }

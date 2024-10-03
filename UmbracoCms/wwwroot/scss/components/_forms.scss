@@ -55,8 +55,13 @@ form {
             font-style: italic;
             color: #AAAAAA;
 
-            &::placeholder {
-                opacity: 0.4;
+            .form-invalid-input {
+                display: block;
+                margin-top: 8px;
+                margin-left: 1rem;
+                font-size: 14px;
+                font-weight: 500;
+                color: #ff585d;
             }
         }
     }

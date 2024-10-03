@@ -50,7 +50,7 @@
             <p>@Model?.Value("aboutUsImgAltText")</p>
         </div>
         <div class="submit-form">
-            <h3>Request a call back</h3>
+            <h3>@Model?.Value("requestFormTitle")</h3>
 
             @if (TempData["success"] != null)
             {
@@ -58,9 +58,10 @@
             }
             else
             {
-                @using (Html.BeginUmbracoForm("HandleSubmit", "RequestSurface", FormMethod.Post))
+                @using (Html.BeginUmbracoForm("HandleRequestSubmit", "RequestSurface", FormMethod.Post))
+
                 {
-                    <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
+                    <p>@Model?.Value("requestFormText")</p>
                     <div id="form-name" class="input-group">
                         <label for="name"></label>
                         <input type="text" name="name" placeholder="Name" value="@ViewData["name"]">
@@ -78,15 +79,15 @@
                     </div>
                     <div id="form-dropdown" class="input-group">
                         <label for="dropdown-menu"></label>
-                        <select id="dropdown-form-menu" name="SelectedOption" required>
-                            <option value="" disabled selected>Select an option</option>
+                        <select id="dropdown-form-menu" name="SelectedOption">
+                            <option value="" disabled selected hidden>Select an option</option>
                             <option value="option1">Financial consulting</option>
                             <option value="option2">Statistic consulting</option>
                             <option value="option3">Risk Management consulting</option>
                         </select>
                         <span class="form-input-error @((error_option)? "form-invalid-input" : null)">You must choose one option</span>
                     </div>
-                    <button class="btn-accent" type="submit">Submit</button>
+                    <button class="btn-accent" type="submit">@Model?.Value("requestFormButtonText")</button>
                 }
             }
 
