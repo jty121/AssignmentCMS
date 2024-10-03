@@ -1,15 +1,15 @@
 @mixin button-colors($bg-color, $text-color, $hover-bg-color, $hover-text-color, $border-color: null, $hover-border-color: null) {    //om du inte vill behöva ange en border färg så sätt parametern till null
-    background-color: var($bg-color);
-    color: var($text-color);
-    border-color: if($border-color, var($border-color), var($bg-color));
+    background-color: $bg-color;
+    color: $text-color;
+    border-color: if($border-color, $border-color, $bg-color);
     outline: none !important;
     -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     &:hover {
-        background-color: var($hover-bg-color); 
-        color: var($hover-text-color);
-        border-color: if($hover-border-color, var($hover-border-color), var($hover-bg-color));
+        background-color: $hover-bg-color; 
+        color: $hover-text-color;
+        border-color: if($hover-border-color, $hover-border-color, $hover-bg-color);
     }
 
     &:hover, &:focus, &:active {
@@ -53,22 +53,22 @@
 
 @mixin heading-colors($h1-color, $h2-color, $h3-color, $h4-color, $h5-color, $h6-color) {
     h1 {
-        color: var($h1-color);
+        color: $h1-color;
     }
     h2 {
-        color: var($h2-color);
+        color: $h2-color;
     }
     h3 {
-        color: var($h3-color);
+        color: $h3-color;
     }
     h4 {
-        color: var($h4-color);
+        color: $h4-color;
     }
     h5 {
-        color: var($h5-color);
+        color: $h5-color;
     }
     h6 {
-        color: var($h6-color);
+        color: $h6-color;
     }
 }
 
@@ -80,10 +80,10 @@
 
 @mixin link-colors($link-color, $hover-color) {
     a {
-        color: var($link-color);
+        color: $link-color;
 
         &:hover, &:focus, &:active {
-            color: var($hover-color);
+            color: $hover-color;
         }
     }
 }

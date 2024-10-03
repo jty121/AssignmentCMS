@@ -1,3 +1,5 @@
+@import "../colors/mixins/_mixins-colors.scss";
+
 .btn-dark {
     @include button-colors(--color-dark, --color-light, --color-accent, --color-primary);
 }

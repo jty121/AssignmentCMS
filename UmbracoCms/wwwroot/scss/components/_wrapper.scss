@@ -1,4 +1,5 @@
 // använd wrapper för att kunna justera hur standardlayouten ska se ut. 
+@import "../mixins/_mixins-media.scss";
 
 .wrapper {
     display: grid;

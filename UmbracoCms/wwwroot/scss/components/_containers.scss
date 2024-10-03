@@ -1,3 +1,5 @@
+@import "../mixins/_mixins-media.scss";
+
 .container {
     position: relative; // för att kunna använda element i containern och styra dit man vill ha dom. 
     width: 100%;

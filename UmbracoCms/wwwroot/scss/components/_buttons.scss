@@ -1,3 +1,5 @@
+@import "../mixins/_mixins-buttons.scss";
+
 .btn-dark, .btn-primary, .btn-secondary, .btn-accent, .btn-gray, .btn-light, .btn-tags {
     @include btn;
 }
