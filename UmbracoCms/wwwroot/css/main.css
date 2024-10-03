@@ -286,7 +286,10 @@ form .input-group input:focus {
 form .input-group select {
   padding: 1rem;
   border-radius: 4px !important;
-  border: 1px solid var(--color-accent);
+  border: 1px solid #EBEBEB;
+  font-family: "poppins";
+  font-style: italic;
+  font-weight: 400 !important;
 }
 form .input-group select:focus {
   outline: 1px solid var(--color-primary);
@@ -2334,7 +2337,8 @@ form .input-group textarea::placeholder {
   font-style: italic;
 }
 .request .container .request-form form {
-  padding: 0 3rem 1rem 3rem;
+  position: relative;
+  padding: 0 3rem 8rem 3rem;
   gap: 1.5rem;
   width: 100%;
   display: grid;
@@ -2352,10 +2356,38 @@ form .input-group textarea::placeholder {
   color: var(--color-primary);
   font-weight: 600;
 }
-.request .container .request-form .btn-primary {
+.request .container .request-form form .btn-primary {
+  position: absolute;
   display: inline-block;
   justify-self: center;
+  bottom: 0;
   margin-bottom: 3rem;
+}
+.request .container .request-form form .form-input-error {
+  display: none;
+}
+.request .container .request-form form .form-invalid-input {
+  display: block;
+  text-align: start;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ff585d;
+}
+.request .container .request-form .success-message {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5rem;
+}
+.request .container .request-form .success-message i {
+  text-align: center;
+  font-size: 6rem;
+  padding: 1rem;
+  color: var(--color-primary);
+  opacity: 0.1;
 }
 
 .container {

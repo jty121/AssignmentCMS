@@ -3,38 +3,41 @@ form {
 
     .input-group {
         display: grid;
-            
+
         label {
             margin-bottom: 7px;
         }
-        
-        input{
-            padding: 1rem; 
+
+        input {
+            padding: 1rem;
             border-radius: 4px !important;
             border: 1px solid #EBEBEB;
             font-family: "poppins";
             font-style: italic;
 
-            &:focus{
+            &:focus {
                 outline: 2px solid var(--color-primary);
             }
         }
 
         select {
-            padding: 1rem; 
+            padding: 1rem;
             border-radius: 4px !important;
-            border: 1px solid var(--color-accent);
+            border: 1px solid #EBEBEB;
+            font-family: "poppins";
+            font-style: italic;
+            font-weight: 400 !important;
 
-            &:focus{
+            &:focus {
                 outline: 1px solid var(--color-primary);
             }
         }
 
-        .form-input-error{
+        .form-input-error {
             display: none;
         }
 
-        .form-invalid-input{
+        .form-invalid-input {
             display: block;
             margin-top: 8px;
             margin-left: 1rem;
@@ -43,7 +46,7 @@ form {
             color: #ff585d;
         }
 
-        textarea{
+        textarea {
             padding: 1rem;
             border-radius: 0.5rem !important;
             border: 1px solid #EBEBEB;
@@ -51,7 +54,7 @@ form {
             font-family: poppins;
             font-style: italic;
             color: #AAAAAA;
-    
+
             &::placeholder {
                 opacity: 0.4;
             }

@@ -1,44 +1,45 @@
-.request{
+.request {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 8rem;
 
-    img{
+    img {
         width: 100%;
         height: auto;
     }
 
-    .container{
+    .container {
         position: absolute;
         width: 70%;
         top: 25%;
 
-        .request-form{
+        .request-form {
             text-align: center;
             background-color: var(--color-light);
             border-radius: 5px;
             box-shadow: 0px 5px 20px 10px rgba(85, 85, 85, 0.1);
 
-            .headlines{
+            .headlines {
                 padding-top: 4rem;
                 width: 50%;
-                margin: 0 auto;  //centrerar div horisontellt
-                
-                p{
+                margin: 0 auto; //centrerar div horisontellt
+
+                p {
                     font-size: 13px;
                     font-style: italic;
                 }
             }
 
             form {
-                padding: 0 3rem 1rem 3rem;
+                position: relative;
+                padding: 0 3rem 8rem 3rem;
                 gap: 1.5rem;
                 width: 100%;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                
+
                 input {
                     font-size: 13px;
                     font-style: italic;
@@ -53,13 +54,45 @@
                     color: var(--color-primary);
                     font-weight: 600;
                 }
+
+                .btn-primary {
+                    position: absolute;
+                    display: inline-block;
+                    justify-self: center;
+                    bottom: 0;
+                    margin-bottom: 3rem;
+                }
+
+                .form-input-error {
+                    display: none;
+                }
+
+                .form-invalid-input {
+                    display: block;
+                    text-align: start;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #ff585d;
+                }
             }
-            .btn-primary{
-                display: inline-block;
-                justify-self: center;
-                margin-bottom: 3rem;    
+
+            .success-message {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 5rem;
+
+                i {
+                    text-align: center;
+                    font-size: 6rem;
+                    padding: 1rem;
+                    color: var(--color-primary);
+                    opacity: 0.1;
+                }
             }
-        
         }
     }
 }
