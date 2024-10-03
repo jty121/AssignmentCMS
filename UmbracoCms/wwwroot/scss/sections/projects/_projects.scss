@@ -51,7 +51,8 @@
                         }
                     }
                 }
-                .read-more:last-of-type{
+
+                .read-more:last-of-type {
                     border-bottom: none;
                 }
 
@@ -128,6 +129,51 @@
                 input {
                     color: #9C9EA6;
                     font-size: 13px;
+                }
+
+                .icon-submit {
+                    background: none;
+                    border: none;
+                    padding: 0;
+                    cursor: pointer;
+
+                    i {
+                        position: absolute;
+                        right: 15%;
+                        bottom: 21%;
+                        font-size: 22px;
+                        color: var(--color-primary);
+                    }
+                }
+
+                .form-invalid-input {
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: 5px;
+                    margin-left: 5px;
+                }
+            }
+
+
+            .success-message {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-top: 3rem;
+                font-size: 1em;
+                font-weight: 500;
+                background-color: var(--color-primary);
+                border-radius: 4px;
+                padding: 2rem;
+                color: #FFFFFF;
+                width: 100%;
+
+                i {
+                    text-align: center;
+                    font-size: 3rem;
+                    padding: 1rem;
+                    color: var(--color-gray);
                 }
             }
         }

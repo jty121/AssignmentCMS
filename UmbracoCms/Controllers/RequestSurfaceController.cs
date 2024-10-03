@@ -53,4 +53,17 @@ public class RequestSurfaceController(IUmbracoContextAccessor umbracoContextAcce
         TempData["success"] = "Your question was send successfully";
         return RedirectToCurrentUmbracoPage();
     }
+
+    public IActionResult HandleEmailSubmit(EmailFormModel form)
+    {
+        if (!ModelState.IsValid)
+        {
+            ViewData["email"] = form.Email;
+            ViewData["error_email"] = string.IsNullOrEmpty(form.Email);
+
+            return CurrentUmbracoPage();
+        }
+        TempData["success"] = "A verification email has been sent to you!";
+        return RedirectToCurrentUmbracoPage();
+    }
 }

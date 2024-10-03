@@ -1,76 +1,114 @@
-.services-details{
+.services-details {
     padding-top: 5rem;
     padding-bottom: 4rem;
 
     .container {
         display: flex;
         justify-content: center;
-        
+
         .support {
-            .content{  
+            .content {
                 width: 70%;
-                h5{
+
+                h5 {
                     margin-bottom: 1.5rem;
                 }
 
-                p{
+                p {
                     margin-top: 1.5rem;
                     margin-bottom: 2rem;
                 }
             }
         }
 
-        form{
+        form {
             position: relative;
             background-color: var(--color-primary);
             border-radius: 4px;
             padding: 2rem;
             width: 85%;
 
-            h4{
+            h4 {
                 color: var(--color-accent);
                 font-weight: 600;
             }
 
-            p{
+            p {
                 color: #ffffff;
             }
 
-            i{
-                position: absolute;
-                right: 15%;
-                bottom: 22%;
-                font-size: 22px;
-                color: var(--color-primary);
-            }
 
-            input{
+
+            input {
                 color: #9C9EA6;
                 font-size: 13px;
             }
 
+            .icon-submit {
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+
+                i {
+                    position: absolute;
+                    right: 15%;
+                    bottom: 21%;
+                    font-size: 22px;
+                    color: var(--color-primary);
+                }
+            }
+
+            .form-invalid-input {
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 5px;
+            }
         }
 
-        .key-point{
+        .success-message {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1em;
+            font-weight: 500;
+            padding-top: 4rem;
+            background-color: var(--color-primary);
+            border-radius: 4px;
+            padding: 2rem;
+            color: #FFFFFF;
+            width: 85%;
+
+            i {
+                text-align: center;
+                font-size: 4rem;
+                padding: 1rem;
+                color: var(--color-gray);
+            }
+        }
+
+        .key-point {
             border-left: 2px solid #ECECEC;
-            
+
             .key-info {
                 padding-left: 4rem;
                 font-size: 14px;
-                img{
+
+                img {
                     width: 100%;
                     height: auto;
                 }
 
-                h4{
+                h4 {
                     font-size: 25px;
                     font-weight: 700;
                     margin-top: 2rem;
                 }
 
-                ul { 
+                ul {
                     padding-left: 1.2rem;
                 }
+
                 li {
                     list-style: none;
                     position: relative;
@@ -83,21 +121,22 @@
                     position: absolute;
                     left: -20px;
                 }
-
-                
             }
 
             .financial-plan {
                 padding-left: 4rem;
-                font-size: 14px;          
-                h4{
+                font-size: 14px;
+
+                h4 {
                     font-size: 25px;
                     font-weight: 700;
                     margin-top: 2rem;
                 }
-                ul { 
+
+                ul {
                     padding-left: 1.2rem;
                 }
+
                 li {
                     list-style: none;
                     position: relative;
@@ -110,22 +149,26 @@
                     position: absolute;
                     left: -20px;
                 }
-                img{
+
+                img {
                     margin-top: 1rem;
                 }
             }
 
-            .financial-confidence{
+            .financial-confidence {
                 padding-left: 4rem;
                 font-size: 14px;
-                h4{
+
+                h4 {
                     font-size: 25px;
                     font-weight: 700;
                     margin-top: 2rem;
                 }
-                ul { 
+
+                ul {
                     padding-left: 1.2rem;
                 }
+
                 li {
                     list-style: none;
                     position: relative;

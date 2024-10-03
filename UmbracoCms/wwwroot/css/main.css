@@ -1867,16 +1867,46 @@ form .input-group textarea .form-invalid-input {
 .services-details .container form p {
   color: #ffffff;
 }
-.services-details .container form i {
-  position: absolute;
-  right: 15%;
-  bottom: 22%;
-  font-size: 22px;
-  color: var(--color-primary);
-}
 .services-details .container form input {
   color: #9C9EA6;
   font-size: 13px;
+}
+.services-details .container form .icon-submit {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.services-details .container form .icon-submit i {
+  position: absolute;
+  right: 15%;
+  bottom: 21%;
+  font-size: 22px;
+  color: var(--color-primary);
+}
+.services-details .container form .form-invalid-input {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
+}
+.services-details .container .success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: 500;
+  padding-top: 4rem;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  padding: 2rem;
+  color: #FFFFFF;
+  width: 85%;
+}
+.services-details .container .success-message i {
+  text-align: center;
+  font-size: 4rem;
+  padding: 1rem;
+  color: var(--color-gray);
 }
 .services-details .container .key-point {
   border-left: 2px solid #ECECEC;
@@ -2151,6 +2181,45 @@ form .input-group textarea .form-invalid-input {
   color: #9C9EA6;
   font-size: 13px;
 }
+.projects .container .tags form .icon-submit {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.projects .container .tags form .icon-submit i {
+  position: absolute;
+  right: 15%;
+  bottom: 21%;
+  font-size: 22px;
+  color: var(--color-primary);
+}
+.projects .container .tags form .form-invalid-input {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+.projects .container .tags .success-message {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  padding: 2rem;
+  color: #FFFFFF;
+  width: 100%;
+}
+.projects .container .tags .success-message i {
+  text-align: center;
+  font-size: 3rem;
+  padding: 1rem;
+  color: var(--color-gray);
+}
 
 .project-detail {
   padding-top: 5rem;
@@ -2326,6 +2395,45 @@ form .input-group textarea .form-invalid-input {
 .project-detail .container .recent-projects .tags form input {
   color: #9C9EA6;
   font-size: 13px;
+}
+.project-detail .container .recent-projects .tags form .icon-submit {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.project-detail .container .recent-projects .tags form .icon-submit i {
+  position: absolute;
+  right: 15%;
+  bottom: 21%;
+  font-size: 22px;
+  color: var(--color-primary);
+}
+.project-detail .container .recent-projects .tags form .form-invalid-input {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+.project-detail .container .recent-projects .tags .success-message {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  padding: 2rem;
+  color: #FFFFFF;
+  width: 100%;
+}
+.project-detail .container .recent-projects .tags .success-message i {
+  text-align: center;
+  font-size: 3rem;
+  padding: 1rem;
+  color: var(--color-gray);
 }
 
 .request {

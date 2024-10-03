@@ -5,6 +5,7 @@
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
     var pageKeywords = Model?.Value<IEnumerable<string>>("pageKeywords") ?? Enumerable.Empty<string>();
+    bool.TryParse(ViewData["error_email"]?.ToString()!, out bool error_email);
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title)) {
@@ -71,16 +72,31 @@
                         }
                     }
                 </div>
-                <form method="post">
-                    <h4>How can we help you?</h4>
-                    <p>online support 24/7, we are here to help you</p>
+            @if (TempData["success"] != null)
 
-                <div id="form-email" class="input-group">
-                    <label for="email"></label>
-                    <input type="text" name="email" placeholder="E-mail address">
-                    <i class="fa-light fa-envelope"></i>
-                </div>
-            </form>
+            {
+                <div class="success-message">@TempData["success"]<i class="fa-solid fa-envelope-circle-check"></i></div>
+            }
+
+            else
+
+            {
+                @using (Html.BeginUmbracoForm("HandleEmailSubmit", "RequestSurface", FormMethod.Post))
+
+                {
+                    <h4>@Model?.Value("supportEmailFormHeadline")</h4>
+                    <p>@Model?.Value("supportEmailFormText")</p>
+
+                    <div id="form-email" class="input-group">
+                        <label for="email"></label>
+                        <input type="text" name="email" placeholder="E-mail address" value="@ViewData["email"]">
+                        <button type="submit" class="icon-submit">
+                            <i class="fa-light fa-envelope"></i>
+                        </button>
+                        <span class="form-input-error @((error_email)? "form-invalid-input" : null)">You must enter your email address</span>
+                    </div>
+                }
+            }
         </div>
     </div>
 </div>
