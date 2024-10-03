@@ -1,8 +1,8 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-	Layout = "mainLayout.cshtml";
-	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+    Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
     var showcaseImage = Model?.Value<IPublishedContent>("showcaseBackgroundImg")?.Url() ?? "";
     var signatureImage = Model?.Value<IPublishedContent>("aboutUsSignatureImg")?.Url() ?? "";
@@ -12,6 +12,11 @@
 
     var storiesMapImg = Model?.Value<IPublishedContent>("storiesBackgroundImg")?.Url() ?? "";
     var storiesImg = Model?.Value<IPublishedContent>("storiesSelectedPhotoImg")?.Url() ?? "";
+
+    bool.TryParse(ViewData["error_name"]?.ToString()!, out bool error_name);
+    bool.TryParse(ViewData["error_email"]?.ToString()!, out bool error_email);
+    bool.TryParse(ViewData["error_phone"]?.ToString()!, out bool error_phone);
+    bool.TryParse(ViewData["error_option"]?.ToString()!, out bool error_option);
 
 }
 
@@ -46,30 +51,45 @@
         </div>
         <div class="submit-form">
             <h3>Request a call back</h3>
-                <form method="post">
+
+            @if (TempData["success"] != null)
+            {
+                <div class="success-message">@TempData["success"]<i class="fa-solid fa-envelope-circle-check"></i></div>
+            }
+            else
+            {
+                @using (Html.BeginUmbracoForm("HandleSubmit", "RequestSurface", FormMethod.Post))
+                {
                     <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
                     <div id="form-name" class="input-group">
                         <label for="name"></label>
-                        <input type="text" name="name" placeholder="Name">
+                        <input type="text" name="name" placeholder="Name" value="@ViewData["name"]">
+                        <span class="form-input-error @((error_name)? "form-invalid-input" : null)">You must enter your name</span>
                     </div>
                     <div id="form-email" class="input-group">
                         <label for="email"></label>
-                        <input type="text" name="email" placeholder="Email address">
+                        <input type="text" name="email" placeholder="Email address" value="@ViewData["email"]">
+                        <span class="form-input-error @((error_email)? "form-invalid-input" : null)">You must enter your email address</span>
                     </div>
                     <div id="form-phone" class="input-group">
                         <label for="phone"></label>
-                        <input type="text" name="phone" placeholder="Phone">
+                        <input type="text" name="phone" placeholder="Phone" value="@ViewData["phone"]">
+                        <span class="form-input-error @((error_phone)? "form-invalid-input" : null)">You must enter your phone number</span>
                     </div>
                     <div id="form-dropdown" class="input-group">
                         <label for="dropdown-menu"></label>
-                        <select id="dropdown-form-menu" name="dropdown-menu">
+                        <select id="dropdown-form-menu" name="SelectedOption" required>
+                            <option value="" disabled selected>Select an option</option>
                             <option value="option1">Financial consulting</option>
                             <option value="option2">Statistic consulting</option>
                             <option value="option3">Risk Management consulting</option>
                         </select>
-                     </div>
+                        <span class="form-input-error @((error_option)? "form-invalid-input" : null)">You must choose one option</span>
+                    </div>
                     <button class="btn-accent" type="submit">Submit</button>
-                </form>
+                }
+            }
+
         </div>
     </div>
 </section>

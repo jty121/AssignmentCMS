@@ -109,6 +109,23 @@
                     font-style: italic;
                 }
             }
+
+            .success-message {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+                font-weight: 500;
+                padding-top: 4rem;
+
+                i {
+                    text-align: center;
+                    font-size: 6rem;
+                    padding: 1rem;
+                    color: var(--color-primary);
+                    opacity: 0.1;
+                }
+            }
         }
     }
 }

@@ -291,6 +291,17 @@ form .input-group select {
 form .input-group select:focus {
   outline: 1px solid var(--color-primary);
 }
+form .input-group .form-input-error {
+  display: none;
+}
+form .input-group .form-invalid-input {
+  display: block;
+  margin-top: 8px;
+  margin-left: 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ff585d;
+}
 form .input-group textarea {
   padding: 1rem;
   border-radius: 0.5rem !important;
@@ -702,6 +713,21 @@ form .input-group textarea::placeholder {
 .about-us .container .submit-form form p {
   font-size: 13px;
   font-style: italic;
+}
+.about-us .container .submit-form .success-message {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 4rem;
+}
+.about-us .container .submit-form .success-message i {
+  text-align: center;
+  font-size: 6rem;
+  padding: 1rem;
+  color: var(--color-primary);
+  opacity: 0.1;
 }
 
 .container {

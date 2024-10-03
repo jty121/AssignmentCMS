@@ -30,6 +30,19 @@ form {
             }
         }
 
+        .form-input-error{
+            display: none;
+        }
+
+        .form-invalid-input{
+            display: block;
+            margin-top: 8px;
+            margin-left: 1rem;
+            font-size: 14px;
+            font-weight: 500;
+            color: #ff585d;
+        }
+
         textarea{
             padding: 1rem;
             border-radius: 0.5rem !important;
