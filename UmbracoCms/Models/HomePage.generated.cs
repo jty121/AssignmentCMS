@@ -346,6 +346,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string TrustedByImgAltText => this.Value<string>(_publishedValueFallback, "trustedByImgAltText");
 
 		///<summary>
+		/// Trusted By - Numbers In Headline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("trustedByNumbersInHeadline")]
+		public virtual string TrustedByNumbersInHeadline => this.Value<string>(_publishedValueFallback, "trustedByNumbersInHeadline");
+
+		///<summary>
 		/// Trusted By - Section Headline
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]

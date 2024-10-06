@@ -9,7 +9,7 @@
         text-align: center;
 
         .our-story {
-
+           
             @include desktop {
                 h2 {
                     line-height: 0.5;
@@ -22,7 +22,11 @@
                 p {
                     margin-top: 2rem;
                     margin-bottom: 2rem;
-                    max-width: 60%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    
                 }
             }
         }

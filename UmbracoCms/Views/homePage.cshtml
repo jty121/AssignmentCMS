@@ -130,10 +130,11 @@
     <div class="container">
         <div class="our-story">
             <h2>@Model?.Value("trustedBySectionHeadline")</h2>
+            <span>@Model?.Value("trustedByNumbersInHeadline")</span>
             <p>@Model?.Value("trustedByText")</p>
             <a href="@Model?.Value("trustedByButtonUrl")" class="btn-primary">@Model?.Value("trustedByButtonText")</a>
         </div>
-        <img class="img-map" src="@trustedBybgImg"" alt="dotted world map">
+        <img class="img-map" src="@trustedBybgImg" alt="dotted world map">
         <img class="img-employees" src="@trustedByImg" alt="Group photo of employees">
     </div>
 </section>

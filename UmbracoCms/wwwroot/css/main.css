@@ -887,7 +887,10 @@ form .input-group textarea .form-invalid-input {
   .trusted-by .container .our-story p {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    max-width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
 .trusted-by .container .img-map {
